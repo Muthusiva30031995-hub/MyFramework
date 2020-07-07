@@ -55,8 +55,8 @@ public class WebDriverFactory {
 		WiniumDriver driver = null;
 		options  = new DesktopOptions();		
 //		String applicationPath = "C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe";
-//		String applicationPath = "C:\\Windows\\System32\\notepad.exe";
-		String applicationPath = "C:\\Symbility Manual\\mclaim.exe";
+		String applicationPath = "C:\\Windows\\System32\\notepad.exe";
+//		String applicationPath = "C:\\Symbility Manual\\mclaim.exe";
 		options.setApplicationPath(applicationPath);
 		String Path = ReusableData.currentDir+"\\src\\driverFactory\\Winium.Desktop.Driver.exe";
 		File driverPath = new File(Path);

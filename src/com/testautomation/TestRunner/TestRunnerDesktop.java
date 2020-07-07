@@ -99,9 +99,9 @@ public class TestRunnerDesktop{
 		slavePOM=System.getProperty("regressionslave");
 		masteresultPathshort=ReusableData.masteresultPathshort;
 		masterFolder = "STP_Automation_" + projectName+ "_" + ReusableComponents.getCurrentDate();
-		ExecutionSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+projectName+"\\Executionsheet.xlsx";
-		DataSheetPath= ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+projectName+"\\Datasheet.xlsx";
-		CommonDataSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+projectName+"\\CommonDataSheet.xlsx";		
+		ExecutionSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\Desktop\\"+projectName+"\\Executionsheet.xlsx";
+		DataSheetPath= ReusableData.currentDir+"\\testData_cucumber\\"+"\\Desktop\\"+projectName+"\\Datasheet.xlsx";
+		CommonDataSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\Desktop\\"+projectName+"\\CommonDataSheet.xlsx";		
 		initializeDataTable();
 		//	Local Report Path
 		reportPath = ReusableData.currentDir+ReusableData.fileSeparator+"Reports";
