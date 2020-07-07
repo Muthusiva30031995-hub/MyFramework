@@ -1,0 +1,368 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>BDD_Automation_Framework</groupId>
+	<artifactId>BDD_Automation_Framework</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Automation Project GWCC</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://cc-agile-test.myqbe.com/CC/ClaimCenter.do</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<java.home>C:/Program Files/Java/jdk1.8.0_212/bin</java.home> 
+			<testng.filename>${env.testng}</testng.filename>
+			
+		<testng.environ>TEST</testng.environ> 
+		<testng.slave>slave1</testng.slave> 
+		<testng.ExeID>NATSM-47179</testng.ExeID> 	 	
+
+		
+			
+	<!-- 	 <testng.environ>${env.envir}</testng.environ>
+		<testng.slave>${env.slave}</testng.slave>
+		<testng.ExeID>${env.testEID}</testng.ExeID> -->
+	</properties>
+
+	<!-- <resources> -->
+	<!-- <resource> -->
+	<!-- <directory>src</directory> -->
+	<!-- <excludes> -->
+	<!-- <exclude>**/*.java</exclude> -->
+	<!-- </excludes> -->
+	<!-- </resource> -->
+	<!-- </resources> -->
+
+	<dependencies>
+		
+	<dependency>
+    <groupId>com.sun.jersey</groupId>
+    <artifactId>jersey-client</artifactId>
+    <version>1.19.4</version>
+</dependency>
+<dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20090211</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>4.3.0</version>
+    <scope>Compile</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+<dependency>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-path</artifactId>
+    <version>4.3.0</version>
+</dependency>
+
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/fontbox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>fontbox</artifactId>
+			<version>2.0.13</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.relevantcodes</groupId> -->
+<!-- 			<artifactId>extentreports</artifactId> -->
+<!-- 			<version>2.41.2</version> -->
+<!-- 		</dependency> -->
+
+		<dependency>
+		    <groupId>com.aventstack</groupId>
+		    <artifactId>extentreports</artifactId>
+		    <version>4.0.0</version>
+		</dependency>
+<!-- https://mvnrepository.com/artifact/com.github.klieber/phantomjs -->
+<!-- https://mvnrepository.com/artifact/com.codeborne/phantomjsdriver -->
+<dependency>
+    <groupId>com.codeborne</groupId>
+    <artifactId>phantomjsdriver</artifactId>
+    <version>1.4.1</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/net.sf.jt400/jt400 -->
+<dependency>
+    <groupId>net.sf.jt400</groupId>
+    <artifactId>jt400</artifactId>
+    <version>6.6</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+<dependency>
+    <groupId>org.apache.pdfbox</groupId>
+    <artifactId>pdfbox</artifactId>
+    <version>1.8.11</version>
+</dependency>
+
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.seleniumhq.selenium</groupId> -->
+<!-- 			<artifactId>selenium-server</artifactId> -->
+<!-- 			<version>2.48.2</version> -->
+<!-- 		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>2.53.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.16</version>
+</dependency>
+		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>openxml4j</artifactId>
+			<version>1.0-beta</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jvnet.com4j</groupId>
+			<artifactId>com4j</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.seleniumhq.selenium</groupId> -->
+		<!-- <artifactId>selenium-java</artifactId> -->
+		<!-- <version>2.48.2</version> -->
+		<!-- <exclusions> -->
+		<!-- <exclusion> -->
+		<!-- <artifactId>guava</artifactId> -->
+		<!-- <groupId>com.google.guava</groupId> -->
+		<!-- </exclusion> -->
+		<!-- </exclusions> -->
+		<!-- </dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.ant/ant -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.apache.ant</groupId> -->
+		<!-- <artifactId>ant</artifactId> -->
+		<!-- <version>1.7.0</version> -->
+		<!-- </dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.mongodb/bson -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>bson</artifactId>
+			<version>3.0.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.beust/jcommander -->
+		<dependency>
+			<groupId>com.beust</groupId>
+			<artifactId>jcommander</artifactId>
+			<version>1.48</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.jacob/jacob -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.jacob</groupId> -->
+		<!-- <artifactId>jacob</artifactId> -->
+		<!-- <version>1.10</version> -->
+		<!-- </dependency> -->
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver</artifactId>
+			<version>3.0.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.16</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.16</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.9.9</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>1.8.11</version>
+		</dependency>
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.4.01</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>mail</artifactId>
+    <version>1.4.7</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
+    <version>4.2.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>4.2.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-jvm-deps</artifactId>
+    <version>1.0.6</version>
+    <scope>provided</scope>
+</dependency> 
+<dependency>
+    <groupId>com.github.2gis.winium</groupId>
+    <artifactId>winium-webdriver</artifactId>
+    <version>0.1.0-1</version>
+	</dependency> 
+	<dependency>
+    <groupId>com.github.2gis.winium</groupId>
+    <artifactId>winium-elements-desktop</artifactId>
+    <version>0.2.0-1</version>
+	</dependency> 
+
+
+<!-- <dependency>
+	<groupId>src.Core_Lib</groupId>
+	<artifactId>example-app</artifactId>
+	<version>1.0</version>
+	<scope>system</scope>
+	<systemPath>${basedir}/Lib/extentreport/MainLib.jar</systemPath>  
+	</dependency> -->
+		
+	</dependencies>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<pluginManagement>
+			<plugins>
+				<!-- <plugin> -->
+				<!-- <groupId>org.apache.maven.plugins</groupId> -->
+				<!-- <artifactId>maven-site-plugin</artifactId> -->
+				<!-- <version>3.4</version> -->
+				<!-- <dependencies> -->
+				<!-- <dependency> -->
+				<!-- <groupId>xml-apis</groupId> -->
+				<!-- <artifactId>xml-apis</artifactId> -->
+				<!-- <version>2.0.2</version> -->
+				<!-- </dependency> -->
+				<!-- </dependencies> -->
+				<!-- </plugin> -->
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.0</version>
+					<configuration>
+						<fork>never</fork>
+						  <executable>${java.home}/javac.exe</executable>
+						<source>${maven.compiler.source}</source>
+        				<target>${maven.compiler.source}</target>
+						
+					</configuration>
+				</plugin>
+				<!-- <plugin> -->
+				<!-- <groupId>org.apache.maven.plugins</groupId> -->
+				<!-- <artifactId>maven-jar-plugin</artifactId> -->
+				<!-- <version>3.0</version> -->
+				<!-- <configuration> -->
+				<!-- <archive> -->
+				<!-- <manifest> -->
+				<!-- <addClasspath>true</addClasspath> -->
+				<!-- <classpathPrefix>/Lib/*</classpathPrefix> -->
+				<!-- </manifest> -->
+				<!-- </archive> -->
+				<!-- </configuration> -->
+				<!-- </plugin> -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.0.0-M2</version>
+					<configuration>
+						<systemPropertyVariables>
+							<!-- <regressionnenv>${testng.environ}</regressionnenv> -->
+							<!-- <regressionslave>${testng.slave}</regressionslave> -->
+							<!-- <regressionExeID>${testng.ExeID}</regressionExeID> -->
+							<regressionnenv>${testng.environ}</regressionnenv>
+							<regressionslave>${testng.slave}</regressionslave>
+							<regressionExeID>${testng.ExeID}</regressionExeID>
+						</systemPropertyVariables>
+						<suiteXmlFiles>
+							<suiteXmlFile>${testng.filename}</suiteXmlFile>
+<!-- 							<suiteXmlFile>${testng.filename}</suiteXmlFile> -->
+						</suiteXmlFiles>  
+			       </configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.1.0</version>
+				</plugin>
+				<!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+				<!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+				<plugin>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.7.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
