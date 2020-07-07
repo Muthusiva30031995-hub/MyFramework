@@ -41,7 +41,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 
 @CucumberOptions(
-			features="src/test/resources/Features/Desktop/Symbility",
+			features="Features/Desktop/Symbility",
 			glue= {"com.testautomation.StepDef"}			
 			)
 public class TestRunnerDesktop{	
@@ -104,30 +104,17 @@ public class TestRunnerDesktop{
 		CommonDataSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\Desktop\\"+projectName+"\\CommonDataSheet.xlsx";		
 		initializeDataTable();
 		//	Local Report Path
-		reportPath = ReusableData.currentDir+ReusableData.fileSeparator+"Reports";
+		reportPath = ReusableData.currentDir+ReusableData.fileSeparator+"Reports"+"\\"+"Desktop";
 		
-		// Share driver Report path
-//		reportPath = masteresultPathshort + "\\resultFolder\\" + masterFolder;		
-//		screenShotFolderPath = masterFolder;
-//		extentReportPathFolder = reportPath + "\\" + slavePOM + "\\" +"ExtentReports";
 		
 		File f = new File(reportPath);
 		if (f.exists() && f.isDirectory())
 		   System.out.println(reportPath + " File folder is present");
 		else
 			new File(reportPath).mkdirs();	
-		
-//		File f1 = new File(extentReportPathFolder);
-//		if (f1.exists() && f1.isDirectory())
-//		   System.out.println(extentReportPathFolder + "File folder is present");
-//		else
-//			new File(extentReportPathFolder).mkdirs();	
-		
 		//To store reports in Local
-		extentReportPath = reportPath + "\\ExtentReports\\" + "ExtentReport" +  ReusableComponents.getCurrentDateAndTime()+ ".html";
-		
-		//To store Reports in Share drive
-//		extentReportPath = extentReportPathFolder + "\\ExtentReports_" +  projectName + "_"+ReusableComponents.getCurrentDateAndTime() + ".html";
+		extentReportPath = reportPath + "\\ExtentReports\\" + "ExtentReport" +  ReusableComponents.getCurrentDateAndTime()+ ".html";		
+
 		commonData.extentReportPath = extentReportPath;
 		extent = Report.setup(extentReportPath);
 	}
@@ -155,13 +142,7 @@ public class TestRunnerDesktop{
 				report = new Report(test);
 				wh = new WebDriverHelper(driver,report,excelData);
 				rc = new ReusableComponents(driver,wh,excelData,report,commonData);				 				
-				ic = new InstanceContainer(driver, wh, rc, commonData,excelData,report);
-				
-				//To store Screenshots in SharePath
-				//screenShotFolder= reportPath+"\\"+ScenarioName+"_"+ReusableComponents.getCurrentDateAndTime()+"\\"+"\\Screenshots\\"+"//";;		
-//				failedScreenShotFolder = reportPath+"\\"+ScenarioName+"_"+ReusableComponents.getCurrentDateAndTime()+"\\"+"\\Screenshots\\"+"\\"+"\\Failed\\"+"//";;
-				
-				//To store Screenshots in Local
+				ic = new InstanceContainer(driver, wh, rc, commonData,excelData,report);			
 				screenShotFolder= reportPath+"\\Screenshots\\"+"//"+ScenarioName+ReusableComponents.getCurrentDateAndTime()+"//";
 				failedScreenShotFolder= reportPath+"\\Screenshots\\"+"//"+ScenarioName+ReusableComponents.getCurrentDateAndTime()+"\\"+"\\Failed\\"+"//";
 				
@@ -196,70 +177,15 @@ public class TestRunnerDesktop{
 		{
 			status = "Failed";
 			ls_Status="FAIL";
-			try {
-				excelData.writeDataToExecutionSheet("Status", ls_Status);
-				if(CommonData.claimNumber!=null)
-				{
-					excelData.writeDataToExecutionSheet("ClaimNo", CommonData.claimNumber);					
-				}
-			} catch (Exception e) {				
-				
-			}
+			
 		} 
 		else if (ITestResult.SUCCESS == result.getStatus()) 
 		{
 			status = "Passed";
 			ls_Status="PASS";
-			try {
-				excelData.writeDataToExecutionSheet("Status", ls_Status);
-				if(CommonData.claimNumber!=null)
-				{
-					excelData.writeDataToExecutionSheet("ClaimNo", CommonData.claimNumber);
-					
-				}
-			} catch (Exception e) {
-				
-			}
 			
-		}
-					
-			String snapshotPath;
-			String reportExcelPath;
-			String htmlmessage;
 			
-				String subject = masterEmailSubject + " in " + slavePOM + ">" + ls_Status + ">" + CommonData.claimNumber + 
-						">" + ScenarioName;
-				
-				snapshotPath = "file:///" + commonData.screenShotFolder;
-				reportExcelPath = "file:///" + commonData.extentReportPath;
-				
-				htmlmessage = "<html>" +
-						"<head><title>"+masterEmailSubject+"</title></head>" +
-						"<body>" +
-						"<h2>Hi Team,</h2>"+
-						"</br>"+
-						"<h2>Please find below snapshot folder path and excel report link,</h2>"+
-						"</br>"+
-						"<h2> Click <a href=\"" + snapshotPath + "\">here</a> to see the <u><b>snapshot</b></u> folder </h2>" +
-						"</br>"+
-						"<h2> Click <a href=\"" + reportExcelPath + "\">here</a> to see the <u><b>Excel Report</b></u> </h2>" +
-						"</br>"+
-						"<h2>Thanks & Regards,</h2>"+
-						"<h2>QBENA Automation Team</h2>"+
-						"</body>" +
-						"</html>";
-				
-				try {
-					 
-					//Email.sendMailWithbody(subject,htmlmessage);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				CommonData.claimNumber="";
-				snapshotPath="";
-				reportExcelPath = "";
-				htmlmessage="";
+		}		
 				
 				execute="N";
 				extent.flush();

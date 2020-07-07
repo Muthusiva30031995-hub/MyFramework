@@ -106,7 +106,7 @@ public class TestRunnerUI{
 		CommonDataSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+projectName+"\\CommonDataSheet.xlsx";		
 		initializeDataTable();
 		//	Local Report Path
-		reportPath = ReusableData.currentDir+ReusableData.fileSeparator+"Reports";
+		reportPath = ReusableData.currentDir+ReusableData.fileSeparator+"Reports"+"\\"+ "UI";
 		
 		// Share driver Report path
 //		reportPath = masteresultPathshort + "\\resultFolder\\" + masterFolder;		

@@ -90,33 +90,62 @@ public class WebDriverHelper{
 	 */
 	public void clickElement(By object,String elementName) throws IOException{				
 		boolean blnClicked = false;
-		try {
-			if (isElementPresent(object)) {			
-				try {
-					System.out.println(object+ " Exits");
-					driver.findElement(object).click();
-					Thread.sleep(100);
-					System.out.println(object+" is clicked successfully");
-					report.updateTestLog(elementName, "The element  " + elementName	+ "  is clicked successfully", Status.PASS);
-					
-				} catch (Exception e) {				
-					System.out.println(object+ " not Exits");
-					report.updateTestLog(elementName, "Element " + object.toString()+ " is not clicked", Status.FAIL);
+		if(automationType.equalsIgnoreCase("UI")) {
+			try {
+				if (isElementPresent(object)) {			
+					try {
+						System.out.println(object+ " Exits");
+						driver.findElement(object).click();
+						Thread.sleep(100);
+						System.out.println(object+" is clicked successfully");
+						report.updateTestLog(elementName, "The element  " + elementName	+ "  is clicked successfully", Status.PASS);
+						
+					} catch (Exception e) {				
+						System.out.println(object+ " not Exits");
+						report.updateTestLog(elementName, "Element " + object.toString()+ " is not clicked", Status.FAIL);
+					}
+					blnClicked = true;
 				}
-				blnClicked = true;
+				else
+				{
+					report.updateTestLog(elementName, "Element " + object.toString()+ " is not displayed", Status.FAIL);
+				}
 			}
-			else
-			{
+			catch (org.openqa.selenium.NoSuchElementException nsee) {
 				report.updateTestLog(elementName, "Element " + object.toString()+ " is not displayed", Status.FAIL);
 			}
+			catch (Exception e) {
+				report.updateTestLog(elementName, "An Exception occured \n <font size=6 color=red> "
+						+ e.getMessage().toString().substring(0, e.getMessage().toString().lastIndexOf("\"") + 2) + "<font>", Status.FAIL);
+			}
 		}
-		catch (org.openqa.selenium.NoSuchElementException nsee) {
-			report.updateTestLog(elementName, "Element " + object.toString()+ " is not displayed", Status.FAIL);
+		else if(automationType.equalsIgnoreCase("Desktop")) {
+			try {
+						
+					try {
+						System.out.println(object+ " Exits");
+						driver.findElement(object).click();
+						Thread.sleep(100);
+						blnClicked = true;
+						System.out.println(object+" is clicked successfully");
+						report.updateTestLog(elementName, "The element  " + elementName	+ "  is clicked successfully", Status.PASS);
+						
+					} catch (Exception e) {				
+						System.out.println(object+ " not Exits");
+						report.updateTestLog(elementName, "Element " + object.toString()+ " is not clicked", Status.FAIL);
+					}
+					
+				
+				
+			}
+			catch (org.openqa.selenium.NoSuchElementException nsee) {
+				report.updateTestLog(elementName, "Element " + object.toString()+ " is not displayed", Status.FAIL);
+			}
+			catch (Exception e) {
+				report.updateTestLog(elementName, "An Exception occured \n <font size=6 color=red> "
+						+ e.getMessage().toString().substring(0, e.getMessage().toString().lastIndexOf("\"") + 2) + "<font>", Status.FAIL);
+			}
 		}
-		catch (Exception e) {
-			report.updateTestLog(elementName, "An Exception occured \n <font size=6 color=red> "
-					+ e.getMessage().toString().substring(0, e.getMessage().toString().lastIndexOf("\"") + 2) + "<font>", Status.FAIL);
-		}		
 			
 	}
 	
@@ -401,7 +430,7 @@ public class WebDriverHelper{
 		else if(automationType.equalsIgnoreCase("Desktop"))
 		{
 				try {
-					if(isElementPresent(object)) {
+					
 					System.out.println(object+ " Exits");
 					if(strValue!=null) {				
 					driver.findElement(object).click();				
@@ -421,7 +450,7 @@ public class WebDriverHelper{
 					{
 						driver.findElement(object).click();
 					}
-				} 
+				 
 	
 				} catch (NoSuchElementException nsee) {
 					report.updateTestLog(strLabel, "Element " + object.toString()+ " <font>is not displayed", Status.FAIL);
@@ -606,6 +635,7 @@ public class WebDriverHelper{
 				if (isElementPresent(object)) {
 					driver.findElement(object).clear();
 					blnTextEntered = true;
+					report.updateTestLog(strLabel, "Element " + object.toString()+ " is cleared", Status.PASS);
 					
 				} else {
 					report.updateTestLog(strLabel, "Element " + object.toString()+ " is not displayed", Status.FAIL);
@@ -620,7 +650,7 @@ public class WebDriverHelper{
 		{
 			boolean blnTextEntered = false;
 			try {
-				if (isElementPresent(object)) { 
+				
 					Robot robot = new Robot();
 					int[] keys = {KeyEvent.VK_CONTROL, KeyEvent.VK_A, KeyEvent.VK_DELETE};
 					robot.keyPress(keys[0]);
@@ -629,13 +659,11 @@ public class WebDriverHelper{
 					robot.keyRelease(keys[0]);
 					robot.keyRelease(keys[2]);
 					blnTextEntered = true;
+					report.updateTestLog(strLabel, "Element " + object.toString()+ " is cleared", Status.PASS);
 					
-				} else {
-					report.updateTestLog(strLabel, "Element " + object.toString()+ " is not displayed", Status.FAIL);
+				} catch (Exception e) {
 					blnTextEntered = false;
-				}
-			} catch (Exception e) {
-				report.updateTestLog(strLabel, "Element " + object.toString()+ " is not displayed", Status.FAIL);
+					report.updateTestLog(strLabel, "Element " + object.toString()+ " is not displayed", Status.FAIL);
 			}
 		}
 

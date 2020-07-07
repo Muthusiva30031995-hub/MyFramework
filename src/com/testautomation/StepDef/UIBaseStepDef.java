@@ -58,8 +58,6 @@ public class UIBaseStepDef extends TestRunnerUI {
 	public CloseExposurePage closeExposurePage = new CloseExposurePage(ic);
 	public CloseMatterPage closeMatterPage = new CloseMatterPage(ic);
 	public CloseClaimPage closeClaimPage = new CloseClaimPage(ic);
-	public GWCCTicketsPage gwccTicketsPage = new GWCCTicketsPage(ic);
-	public DesktopAutomationPage desktopAutomationPage = new DesktopAutomationPage(ic);
-	public RestAssuredAPI restAssuredAPI = new RestAssuredAPI(ic);
+	public GWCCTicketsPage gwccTicketsPage = new GWCCTicketsPage(ic);	
 	
 }
