@@ -25,15 +25,12 @@ import com.sun.jersey.api.client.ClientHandlerException;
 import com.testautomation.Config.CommonData;
 import com.testautomation.Config.InstanceContainer;
 import com.testautomation.Config.ReusableData;
-import com.testautomation.Config.WebDriverFactory;
 import com.testautomation.WrapperComponent.WebDriverHelper;
 import com.testautomation.reusableComponents.Email;
 import com.testautomation.reusableComponents.ExcelDataAccess;
 import com.testautomation.reusableComponents.Report;
 import com.testautomation.reusableComponents.ReusableComponents;
-
-
-
+import com.testautomation.reusableComponents.WebDriverFactory;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.PickleEventWrapper;
