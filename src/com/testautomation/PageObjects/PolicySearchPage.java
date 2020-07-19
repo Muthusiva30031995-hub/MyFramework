@@ -63,7 +63,7 @@ public class PolicySearchPage extends PageBase{
 //		wh.waitForElementPresent(PolicySearchPageUI.summaryTitle);
 	}
 	
-	public void step2NextBtn() throws IOException
+	public void step2NextBtn() throws Exception
 	{
 		if(wh.isElementPresent(PolicySearchPageUI.step2NextBtn)) {
 			wh.clickElement(PolicySearchPageUI.step2NextBtn,"Next");

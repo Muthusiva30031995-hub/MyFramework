@@ -59,7 +59,7 @@ import winium.elements.desktop.ComboBox;
 public class WebDriverHelper{
 	
 	public WebDriver driver;
-	public static Report report;
+	public Report report;
 	public Properties properties;
 	
 	public ExcelDataAccess excelData;
@@ -85,10 +85,12 @@ public class WebDriverHelper{
 	}
 	/**
 	 * Component to Click the button and check the page gets load on the time
-	 * @throws IOException 
+	 * @throws Exception 
 	 *
 	 */
-	public void clickElement(By object,String elementName) throws IOException{				
+	public void clickElement(By object,String elementName) throws Exception{	
+		properties = ReusableComponents.loadFromPropertiesFile();
+		automationType = properties.getProperty("AutomationType");
 		boolean blnClicked = false;
 		if(automationType.equalsIgnoreCase("UI")) {
 			try {
@@ -137,6 +139,35 @@ public class WebDriverHelper{
 					
 				
 				
+			}
+			catch (org.openqa.selenium.NoSuchElementException nsee) {
+				report.updateTestLog(elementName, "Element " + object.toString()+ " is not displayed", Status.FAIL);
+			}
+			catch (Exception e) {
+				report.updateTestLog(elementName, "An Exception occured \n <font size=6 color=red> "
+						+ e.getMessage().toString().substring(0, e.getMessage().toString().lastIndexOf("\"") + 2) + "<font>", Status.FAIL);
+			}
+		}
+		if(automationType.equalsIgnoreCase("Mobile")) {
+			try {
+				if (isElementPresent(object)) {			
+					try {
+						System.out.println(object+ " Exits");
+						driver.findElement(object).click();
+						Thread.sleep(500);
+						System.out.println(object+" is clicked successfully");
+						report.updateTestLog(elementName, "The element  " + elementName	+ "  is clicked successfully", Status.PASS);
+						
+					} catch (Exception e) {				
+						System.out.println(object+ " not Exits");
+						report.updateTestLog(elementName, "Element " + object.toString()+ " is not clicked", Status.FAIL);
+					}
+					blnClicked = true;
+				}
+				else
+				{
+					report.updateTestLog(elementName, "Element " + object.toString()+ " is not displayed", Status.FAIL);
+				}
 			}
 			catch (org.openqa.selenium.NoSuchElementException nsee) {
 				report.updateTestLog(elementName, "Element " + object.toString()+ " is not displayed", Status.FAIL);
@@ -462,6 +493,35 @@ public class WebDriverHelper{
 				catch (Exception e) {
 					report.updateTestLog(strLabel, "An Exception occurred \n <font size=6 color=red> "+ e.getMessage().toString().substring(0, e.getMessage().toString().lastIndexOf("\\") + 2) + "<font>", Status.FAIL);
 				}
+		}
+		if(automationType.equalsIgnoreCase("Mobile")) {
+			
+			try {
+				if (isElementPresent(object)) {	
+					System.out.println(object+ " Exits");
+					if(strValue!=null) {				
+					driver.findElement(object).click();
+					driver.findElement(object).sendKeys(Keys.CONTROL,"a");					
+					driver.findElement(object).sendKeys(strValue);
+					Thread.sleep(1000);
+					System.out.println(strValue+ " is entered in "+strLabel );
+					report.updateTestLog(strLabel, strValue + " is entered in the " + strLabel+" text field", Status.PASS);
+					}
+					else
+						driver.findElement(object).click();
+				} 
+	
+			} catch (NoSuchElementException nsee) {
+				report.updateTestLog(strLabel, "Element " + object.toString()+ " <font>is not displayed", Status.FAIL);
+			}  catch (org.openqa.selenium.remote.UnreachableBrowserException ube) {
+				report.updateTestLog(strLabel, "Browser closed un-expectedly is not displayed", Status.FAIL);
+			} catch (org.openqa.selenium.ElementNotVisibleException env) {
+				report.updateTestLog(strLabel, "Element " + object.toString()+ " is hidden or not visible", Status.FAIL);
+			}
+			catch (Exception e) {
+				report.updateTestLog(strLabel, "An Exception occurred \n <font size=6 color=red> "+ e.getMessage().toString().substring(0, e.getMessage().toString().lastIndexOf("\\") + 2) + "<font>", Status.FAIL);
+			}
+		
 		}
 
 	}

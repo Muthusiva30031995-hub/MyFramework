@@ -29,7 +29,7 @@ public class DesktopAutomationPage extends PageBase{
 		
 	}
 
-	public void closeTheNotepad() throws IOException
+	public void closeTheNotepad() throws Exception
 	{
 		wh.clickElement(DesktopAutomationPageUI.notePadClose, "Notepad Close button");		
 	}

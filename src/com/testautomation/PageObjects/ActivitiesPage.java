@@ -16,7 +16,7 @@ public class ActivitiesPage extends PageBase{
 		
 	}
 	
-	public void closeActivities() throws IOException
+	public void closeActivities() throws Exception
 	{
 		wh.clickElement(ActivitiesPageUI.activitiesLink, "Activities Link");
 //		wh.clickElement(activitiesPageUI.checkBox, "Activities Check box");

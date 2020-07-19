@@ -49,7 +49,7 @@ public class TestRunnerMobile{
 	  
 	 private TestNGCucumberRunner testNGCucumberRunner;	 
 	 public static ExcelDataAccess excelData;
-	 public static AndroidDriver<WebElement> driver;
+	 public static WebDriver driver;
 	 public static CommonData commonData = new CommonData();	 
 	 public static InstanceContainer ic;
 	 public static WebDriverHelper wh;
@@ -67,6 +67,7 @@ public class TestRunnerMobile{
 	 String DataSheetPath=null;
 	 String CommonDataSheetPath = null;
 	 String CommonDataPath= null;
+	 String DataRepoSheetPath = null;
 	 String reportPath= null;
 	 String extentReportPathFolder= null;
 	 String extentReportPath=null;	 
@@ -96,16 +97,17 @@ public class TestRunnerMobile{
 		properties = ReusableComponents.loadFromPropertiesFile();
 		projectName = "MobileAutomation";
 		CommonData.projectName = projectName;
-		envPOM=System.getProperty("regressionnenv");
-		slavePOM=System.getProperty("regressionslave");
+//		envPOM=System.getProperty("regressionnenv");
+//		slavePOM=System.getProperty("regressionslave");
 		masteresultPathshort=ReusableData.masteresultPathshort;
-		masterFolder = "STP_Automation_" + projectName+ "_" + ReusableComponents.getCurrentDate();
+		masterFolder = "Mobile_Automation_" + projectName+ "_" + ReusableComponents.getCurrentDate();
 		ExecutionSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\Mobile\\"+projectName+"\\Executionsheet.xlsx";
 		DataSheetPath= ReusableData.currentDir+"\\testData_cucumber\\"+"\\Mobile\\"+projectName+"\\Datasheet.xlsx";
-		CommonDataSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\Mobile\\"+projectName+"\\CommonDataSheet.xlsx";		
+		CommonDataSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\Mobile\\"+projectName+"\\CommonDataSheet.xlsx";
+		DataRepoSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\Mobile\\"+projectName+"\\DataRepo.xlsx";
 		initializeDataTable();
 		//	Local Report Path
-		reportPath = ReusableData.currentDir+ReusableData.fileSeparator+"Reports"+"\\"+ "UI";
+		reportPath = ReusableData.currentDir+ReusableData.fileSeparator+"Reports"+"\\"+ "Mobile";
 		
 		// Share driver Report path
 //		reportPath = masteresultPathshort + "\\resultFolder\\" + masterFolder;		
@@ -142,8 +144,8 @@ public class TestRunnerMobile{
 		execute = executeFlag;			
 		iterationCount = Integer.parseInt(iteration);
 		commonData.iterationCount = iterationCount;
-		
-		if(execute.trim().replaceAll("\n","").equalsIgnoreCase("Y") && slaveno.trim().replaceAll("\n","").equalsIgnoreCase(slavePOM))
+//		 && slaveno.trim().replaceAll("\n","").equalsIgnoreCase(slavePOM)
+		if(execute.trim().replaceAll("\n","").equalsIgnoreCase("Y"))
 			{
 				System.out.println(ScenarioName); 				
 				for(int i=1;i<=iterationCount;i++)
@@ -192,7 +194,8 @@ public class TestRunnerMobile{
 	public void tearDownTest(ITestResult result) throws Exception {
 		
 		String status = "";
-		if(execute.trim().replaceAll("\n","").equalsIgnoreCase("Y") && slaveno.trim().replaceAll("\n","").equalsIgnoreCase(slavePOM))
+//		 && slaveno.trim().replaceAll("\n","").equalsIgnoreCase(slavePOM)
+		if(execute.trim().replaceAll("\n","").equalsIgnoreCase("Y"))
 		{
 		if (ITestResult.FAILURE == result.getStatus()) 
 		{
@@ -280,7 +283,7 @@ public class TestRunnerMobile{
 	
 	private void initializeDataTable()
 	{
-		excelData = new ExcelDataAccess(DataSheetPath, "Test_Data",CommonDataSheetPath,"Common_TestData");
+		excelData = new ExcelDataAccess(ExecutionSheetPath,"BDD",DataSheetPath, "Test_Data",CommonDataSheetPath,"Common_TestData",DataRepoSheetPath,"Data");
 		
 	}
 }

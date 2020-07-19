@@ -14,7 +14,7 @@ public class PolicySeachPageStepDef extends UIBaseStepDef{
 	}
 	
 	@And("^Click Next button in Step 2 of 3 policy properties page$")
-	public void click_next_button_in_step_2_of_3_policy_properties_page() throws IOException
+	public void click_next_button_in_step_2_of_3_policy_properties_page() throws Exception
 	{
 		policySearchPage.step2NextBtn();
 	}

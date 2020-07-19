@@ -64,6 +64,7 @@ public class TestRunnerDesktop{
 	 String DataSheetPath=null;
 	 String CommonDataSheetPath = null;
 	 String CommonDataPath= null;
+	 String DataRepoSheetPath = null;
 	 String reportPath= null;
 	 String extentReportPathFolder= null;
 	 String extentReportPath=null;	 
@@ -202,7 +203,7 @@ public class TestRunnerDesktop{
 	
 	private void initializeDataTable()
 	{
-		excelData = new ExcelDataAccess(DataSheetPath, "Test_Data",CommonDataSheetPath,"Common_TestData");
+		excelData = new ExcelDataAccess(ExecutionSheetPath,"BDD",DataSheetPath, "Test_Data",CommonDataSheetPath,"Common_TestData",DataRepoSheetPath,"Data");
 		
 	}
 	

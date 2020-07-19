@@ -57,7 +57,7 @@ public class FNOLPage extends PageBase{
 		
 	}
 	
-	public void clickFinish() throws InterruptedException, IOException {
+	public void clickFinish() throws Exception {
 		
 		if(wh.isElementPresent(FNOLPageUI.finishButton)) {
 			wh.clickElement(FNOLPageUI.finishButton,"Finish");

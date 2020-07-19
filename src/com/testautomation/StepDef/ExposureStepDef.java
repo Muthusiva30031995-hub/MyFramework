@@ -11,13 +11,13 @@ import cucumber.api.java.en.When;
 public class ExposureStepDef extends UIBaseStepDef{
 	
 	@When("^Navigate to \"(.*)\" exposure through \"(.*)\"$")
-	public void navigate_to_dwelling_exposure(String exposureName,String path) throws IOException
+	public void navigate_to_dwelling_exposure(String exposureName,String path) throws Exception
 	{
 		exposurePage.exposureNavigation(exposureName,path);
 	}
 	
 	@When("^Navigate to \"(.*)\" exposure through \"(.*)\" coverage$")
-	public void navigate_to_dwelling_exposure_coverage(String exposureName,String path) throws IOException
+	public void navigate_to_dwelling_exposure_coverage(String exposureName,String path) throws Exception
 	{
 		exposurePage.exposureNavigationByName(exposureName,path);
 	}

@@ -22,7 +22,7 @@ public class DesktopAutomationStepDef extends DesktopBaseStepDef{
 	}
 	
 	@Then("^Close the notepad$")
-	public void close_the_notepad() throws IOException
+	public void close_the_notepad() throws Exception
 	{
 		desktopAutomationPage.closeTheNotepad();
 		

@@ -51,7 +51,7 @@ public class FNOLPageStepDef extends UIBaseStepDef{
 	}
 	
 	@And("^Click on finish button in FNOL page$")
-	public void click_on_finish_button_in_FNOL_page() throws InterruptedException, IOException {
+	public void click_on_finish_button_in_FNOL_page() throws Exception {
 		fnolPage.clickFinish();
 	}
 

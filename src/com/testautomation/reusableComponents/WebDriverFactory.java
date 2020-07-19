@@ -121,15 +121,20 @@ public class WebDriverFactory {
 		}		
 		
 		
+		
 		public static AndroidDriver<WebElement> getMobileAppDriver(String platform,String version,String deviceName) throws MalformedURLException
 		{
-			AndroidDriver<WebElement>  driver=null;
+			AndroidDriver<WebElement> driver=null;
 			DesiredCapabilities dc = new DesiredCapabilities();
 			dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
-			dc.setCapability(MobileCapabilityType.PLATFORM, "Android");
-			dc.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.1");
-			dc.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
-			dc.setCapability(MobileCapabilityType.APP, "E:\\MS\\Automation Softwares\\Appium\\Flipkart Online Shopping App_v7.8_apkpure.com.apk");
+			dc.setCapability(MobileCapabilityType.PLATFORM_NAME, platform);
+			dc.setCapability(MobileCapabilityType.PLATFORM_VERSION, version);
+			dc.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
+//			dc.setCapability(MobileCapabilityType.APP, "E:\\MS\\Automation Softwares\\Appium\\Flipkart Online Shopping App_v7.8_apkpure.com.apk");
+//			dc.setCapability("appPackage", "com.android.calculator2");
+//			dc.setCapability("appActivity", "com.android.calculator2.Calculator");
+			dc.setCapability("appPackage", "com.google.android.dialer");
+			dc.setCapability("appActivity", "com.google.android.apps.dialer.extensions.GoogleDialtactsActivity");
 			URL url = new URL("http://127.0.0.1:4723/wd/hub");		
 			driver = new AndroidDriver<WebElement>(url, dc);			
 			return driver;

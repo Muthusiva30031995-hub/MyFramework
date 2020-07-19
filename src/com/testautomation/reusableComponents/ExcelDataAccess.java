@@ -27,23 +27,31 @@ public class ExcelDataAccess {
 	private static XSSFSheet ExcelWSheet;
 	 private static XSSFWorkbook ExcelWBook;
 	 private static XSSFCell Cell;
-	 private static XSSFRow Row; 	 
+	 private static XSSFRow Row; 
+	 private String ExecutionSheetfilePath;
+	 private String ExecutionSheetName;
 	 private String DatafilePath;
 	 private String DataSheetName;
+	 private String DataRepofilePath;
+	 private String DataRepoSheetName;
 	 private String currentTestcase;
-	 String CommonDataFilePath;
-	 String CommonDataSheetName;
+	 private String CommonDataFilePath;
+	 private String CommonDataSheetName;
 	 private int currentIteration = 0;
 	
 	 
 	 
 	  
-	 public ExcelDataAccess(String DatafilePath, String DataSheetName,String CommonDataFilePath, String CommonDataSheetName)
+	 public ExcelDataAccess(String ExecutionSheetfilePath,String ExecutionSheetName,String DatafilePath, String DataSheetName,String CommonDataFilePath, String CommonDataSheetName,String DataRepofilePath,String DataRepoSheetName)
 	 {		 
+		 this.ExecutionSheetfilePath = ExecutionSheetfilePath;
+		 this.ExecutionSheetName = ExecutionSheetName; 
 		 this.DatafilePath = DatafilePath;
 		 this.DataSheetName = DataSheetName;
 		 this.CommonDataFilePath = CommonDataFilePath;
 		 this.CommonDataSheetName = CommonDataSheetName; 
+		 this.DataRepofilePath = DataRepofilePath;
+		 this.DataRepoSheetName = DataRepoSheetName;
 		 
 	 }
 	 
@@ -249,8 +257,8 @@ public class ExcelDataAccess {
 	public void writeDataToExecutionSheet(String columnName, String dataToWrite) throws Exception
 	{
 		
-		String FilePath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+CommonData.projectName+"\\Executionsheet.xlsx";
-		String datasheetName = "BDD";
+		String FilePath = this.ExecutionSheetfilePath;
+		String datasheetName = this.ExecutionSheetName;
 		FileInputStream ExcelFile = new FileInputStream(FilePath);
 		// Access the required test data sheet
 		ExcelWBook = new XSSFWorkbook(ExcelFile);
@@ -300,8 +308,8 @@ public class ExcelDataAccess {
 	
 	public void writeDataToDataRepo(String columnName, String dataToWrite) throws Exception
 	{		
-		String FilePath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+CommonData.projectName+"\\DataRepo.xlsx";
-		String datasheetName = "Data";
+		String FilePath = this.DataRepofilePath;
+		String datasheetName = this.DataRepoSheetName;
 		FileInputStream ExcelFile = new FileInputStream(FilePath);
 		// Access the required test data sheet
 		ExcelWBook = new XSSFWorkbook(ExcelFile);
@@ -352,8 +360,8 @@ public class ExcelDataAccess {
 	public synchronized String getDataFromDataRepo(String fieldName) throws Exception
 	{
 		checkPreRequisites();
-		String FilePath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+CommonData.projectName+"\\DataRepo.xlsx";
-		String datasheetName = "Data";
+		String FilePath = this.DataRepofilePath;
+		String datasheetName = this.DataRepoSheetName;
 		FileInputStream ExcelFile = new FileInputStream(FilePath);
 		// Access the required test data sheet
 		ExcelWBook = new XSSFWorkbook(ExcelFile);

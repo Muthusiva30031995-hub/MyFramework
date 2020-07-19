@@ -30,7 +30,7 @@ public class ExposurePage extends PageBase{
 	String KOL = null;
 	
 	
-	public void exposureNavigation(String exposureName,String navigation) throws IOException
+	public void exposureNavigation(String exposureName,String navigation) throws Exception
 	{
 		String[] path = navigation.split("-");	
 		String item1=null;
@@ -146,7 +146,7 @@ public class ExposurePage extends PageBase{
 	}
 	
 	
-	public void exposureNavigationByName(String exposureName,String navigation) throws IOException
+	public void exposureNavigationByName(String exposureName,String navigation) throws Exception
 	{
 		String[] path = navigation.split("_");	
 		String item1=null;	

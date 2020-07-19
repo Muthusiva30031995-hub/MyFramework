@@ -65,6 +65,7 @@ public class TestRunnerUI{
 	 String DataSheetPath=null;
 	 String CommonDataSheetPath = null;
 	 String CommonDataPath= null;
+	 String DataRepoSheetPath = null;
 	 String reportPath= null;
 	 String extentReportPathFolder= null;
 	 String extentReportPath=null;	 
@@ -100,7 +101,9 @@ public class TestRunnerUI{
 		masterFolder = "STP_Automation_" + projectName+ "_" + ReusableComponents.getCurrentDate();
 		ExecutionSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+projectName+"\\Executionsheet.xlsx";
 		DataSheetPath= ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+projectName+"\\Datasheet.xlsx";
-		CommonDataSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+projectName+"\\CommonDataSheet.xlsx";		
+		CommonDataSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\UI\\"+projectName+"\\CommonDataSheet.xlsx";
+		DataRepoSheetPath = ReusableData.currentDir+"\\testData_cucumber\\"+"\\Mobile\\"+projectName+"\\DataRepo.xlsx";
+		
 		initializeDataTable();
 		//	Local Report Path
 		reportPath = ReusableData.currentDir+ReusableData.fileSeparator+"Reports"+"\\"+ "UI";
@@ -280,7 +283,7 @@ public class TestRunnerUI{
 	
 	private void initializeDataTable()
 	{
-		excelData = new ExcelDataAccess(DataSheetPath, "Test_Data",CommonDataSheetPath,"Common_TestData");
+		excelData = new ExcelDataAccess(ExecutionSheetPath,"BDD",DataSheetPath, "Test_Data",CommonDataSheetPath,"Common_TestData",DataRepoSheetPath,"Data");
 		
 	}
 }
