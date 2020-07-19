@@ -1,9 +1,12 @@
 package com.testautomation.reusableComponents;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
@@ -15,6 +18,9 @@ import org.openqa.selenium.winium.WiniumDriverService;
 
 import com.testautomation.Config.ReusableData;
 import com.testautomation.reusableComponents.ReusableComponents;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
 
 
 
@@ -114,6 +120,21 @@ public class WebDriverFactory {
 			return driver;
 		}		
 		
+		
+		public static AndroidDriver<WebElement> getMobileAppDriver(String platform,String version,String deviceName) throws MalformedURLException
+		{
+			AndroidDriver<WebElement>  driver=null;
+			DesiredCapabilities dc = new DesiredCapabilities();
+			dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
+			dc.setCapability(MobileCapabilityType.PLATFORM, "Android");
+			dc.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.1");
+			dc.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
+			dc.setCapability(MobileCapabilityType.APP, "E:\\MS\\Automation Softwares\\Appium\\Flipkart Online Shopping App_v7.8_apkpure.com.apk");
+			URL url = new URL("http://127.0.0.1:4723/wd/hub");		
+			driver = new AndroidDriver<WebElement>(url, dc);			
+			return driver;
+			
+		}
 		
 		
 		

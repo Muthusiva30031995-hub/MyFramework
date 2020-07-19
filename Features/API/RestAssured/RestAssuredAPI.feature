@@ -4,7 +4,7 @@ Background:
 Given Initialize the API
 
 Scenario: TC001_RestAssured_GET_Operation
-When Perform GET operation for "/employees"
+When Perform GET operation for "/users"
 Then Verify the status code
 Then Verify the status line
 Then Verify the "Ashton Cox" element is present in the response body
