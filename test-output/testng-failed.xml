@@ -8,7 +8,7 @@
           <include name="tearDownClass"/>
           <include name="beforeSetup"/>
           <include name="setUpClass"/>
-          <include name="main_method" invocation-numbers="1"/>
+          <include name="main_method" invocation-numbers="3"/>
           <include name="tearDownTest"/>
         </methods>
       </class> <!-- com.testautomation.TestRunner.TestRunnerMobile -->

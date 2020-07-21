@@ -1,9 +1,15 @@
 package com.testautomation.PageObjects;
 
 import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import com.testautomation.Config.InstanceContainer;
 import com.testautomation.PageUI.MobileAutomationPageUI;
+
+import io.appium.java_client.android.AndroidElement;
 
 public class MobileAutomationPage extends PageBase{
 
@@ -50,6 +56,45 @@ public class MobileAutomationPage extends PageBase{
 		{
 			wh.clickElement(MobileAutomationPageUI.endCall, "End Call");
 		}
+		
+	}
+	
+	public void sendMessage() throws Exception
+	{
+		String mobileNoToSend = excelData.getData("MobileNumber");
+		String messageToSend = excelData.getData("MessageToSend");
+		wh.clickElement(MobileAutomationPageUI.newMessage, "New Message");
+		wh.enterValue(MobileAutomationPageUI.toNumber, mobileNoToSend, "To");
+		wh.robotTAB();
+		wh.enterValue(MobileAutomationPageUI.messageText, messageToSend, "Message Text Field");
+		wh.clickElement(MobileAutomationPageUI.sendMsgSymbol, "Send Message");		
+		wh.validateText(MobileAutomationPageUI.messageSent, messageToSend, "Verify Message");	
+		
+		
+	}
+	
+	
+	public void APIDemoOperation1(String text) throws Exception
+	{		
+		if(wh.isElementExists(MobileAutomationPageUI.licenseOkBtn))
+		{
+			wh.clickElement(MobileAutomationPageUI.licenseOkBtn, "License Ok Button");
+		}
+		List<WebElement> list = driver.findElements(By.id("android:id/text1"));
+		for(WebElement item:list)
+		{
+			if(item.getText().contains("API Demos"))
+			{
+				item.click();
+				break;
+			}
+		}
+		AndroidElement list1 = (AndroidElement) driver.findElement(By.id("android:id/text1"));
+		wh.mobileScrollToViewAndClick(text);
+		
+		
+		
+		
 		
 	}
 	

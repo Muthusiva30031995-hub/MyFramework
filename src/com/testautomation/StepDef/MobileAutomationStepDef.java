@@ -26,4 +26,16 @@ public class MobileAutomationStepDef extends MobileBaseStepDef{
 	{
 		mobileAutomationPage.DialNumber();
 	}
+	
+	@When("Send a message through messages app")
+	public void send_a_message_through_messages_app() throws Exception
+	{
+		mobileAutomationPage.sendMessage();
+	}
+	
+	@When("^Navigate to API demos and click on \"(.*)\"$")
+	public void navigate_to_api_demos_and_click_on(String text) throws Exception
+	{
+		mobileAutomationPage.APIDemoOperation1(text);
+	}
 }

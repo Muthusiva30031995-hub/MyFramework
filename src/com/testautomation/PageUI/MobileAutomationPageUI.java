@@ -19,5 +19,12 @@ public class MobileAutomationPageUI {
 	public static final By mobileNumber = By.id("com.google.android.dialer:id/digits");
 	public static final By callIcon = By.id("com.google.android.dialer:id/dialpad_floating_action_button");
 	public static final By endCall = By.id("com.google.android.dialer:id/incall_end_call");
-
+	public static final By newMessage = By.id("com.google.android.apps.messaging:id/start_new_conversation_button");
+	public static final By toNumber = By.id("com.google.android.apps.messaging:id/recipient_text_view");	
+	public static final By messageText = By.id("com.google.android.apps.messaging:id/compose_message_text");
+	public static final By messageSent = By.className("android.widget.FrameLayout");
+	public static final By sendMsgSymbol = By.id("com.google.android.apps.messaging:id/send_message_button_container");
+	public static final By licenseOkBtn = By.id("com.touchboarder.android.api.demos:id/buttonDefaultPositive");
+	
+	
 }
