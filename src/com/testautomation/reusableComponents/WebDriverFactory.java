@@ -135,10 +135,10 @@ public class WebDriverFactory {
 //			dc.setCapability("appActivity", "com.android.calculator2.Calculator");
 //			dc.setCapability("appPackage", "com.google.android.dialer");
 //			dc.setCapability("appActivity", "com.google.android.apps.dialer.extensions.GoogleDialtactsActivity");
-//			dc.setCapability("appPackage", "com.google.android.apps.messaging");
-//			dc.setCapability("appActivity", "com.google.android.apps.messaging.ui.conversationlist.ConversationListActivity - Messages");
-			dc.setCapability("appPackage", "com.touchboarder.android.api.demos");
-			dc.setCapability("appActivity", "com.touchboarder.androidapidemos.MainActivity");
+			dc.setCapability("appPackage", "com.google.android.apps.messaging");
+			dc.setCapability("appActivity", "com.google.android.apps.messaging.ui.ConversationListActivity");
+//			dc.setCapability("appPackage", "com.touchboarder.android.api.demos");
+//			dc.setCapability("appActivity", "com.touchboarder.androidapidemos.MainActivity");
 			URL url = new URL("http://127.0.0.1:4723/wd/hub");		
 			driver = new AndroidDriver<WebElement>(url, dc);			
 			return driver;

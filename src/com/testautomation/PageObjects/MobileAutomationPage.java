@@ -65,7 +65,9 @@ public class MobileAutomationPage extends PageBase{
 		String messageToSend = excelData.getData("MessageToSend");
 		wh.clickElement(MobileAutomationPageUI.newMessage, "New Message");
 		wh.enterValue(MobileAutomationPageUI.toNumber, mobileNoToSend, "To");
-		wh.robotTAB();
+		Thread.sleep(3000);
+		WebElement ele = driver.findElement(MobileAutomationPageUI.toNumber);
+		wh.mobileTAB(ele);
 		wh.enterValue(MobileAutomationPageUI.messageText, messageToSend, "Message Text Field");
 		wh.clickElement(MobileAutomationPageUI.sendMsgSymbol, "Send Message");		
 		wh.validateText(MobileAutomationPageUI.messageSent, messageToSend, "Verify Message");	

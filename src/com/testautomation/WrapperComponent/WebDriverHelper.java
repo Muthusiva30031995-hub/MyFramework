@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -53,7 +54,9 @@ import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
+import io.appium.java_client.touch.offset.PointOption;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
@@ -1002,6 +1005,17 @@ public class WebDriverHelper{
 	
 	}
 	
+	public void TAB(By locator)
+	{
+		try {
+			if(isElementPresent(locator)) {
+				driver.findElement(locator).sendKeys(Keys.TAB);
+			}
+		} catch (Exception e) {			
+			e.printStackTrace();
+		}
+	}
+	
 	
 	public void initializeHTTPRequest(String uri)
 	{
@@ -1196,6 +1210,14 @@ public class WebDriverHelper{
 		listitem.click();
 				
 	}
+	
+	      
+    @SuppressWarnings("rawtypes")
+	public void mobileTAB(WebElement element)
+    {
+    	TouchAction action = new TouchAction((MobileDriver)driver);    	
+    	action.tap(ElementOption.element(element)).release().perform();
+    }
 		
 		
 }
