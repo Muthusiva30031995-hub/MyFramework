@@ -20,6 +20,7 @@ import com.testautomation.Config.ReusableData;
 import com.testautomation.reusableComponents.ReusableComponents;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 
@@ -122,26 +123,64 @@ public class WebDriverFactory {
 		
 		
 		
-		public static AndroidDriver<WebElement> getMobileAppDriver(String platform,String version,String deviceName) throws MalformedURLException
+		public static AndroidDriver<WebElement> getAndroidMobileAppDriver(String platform,String version,String deviceName) throws MalformedURLException
 		{			
-			AndroidDriver<WebElement> driver=null;
-			DesiredCapabilities dc = new DesiredCapabilities();
-			dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
-			dc.setCapability(MobileCapabilityType.PLATFORM_NAME, platform);
-			dc.setCapability(MobileCapabilityType.PLATFORM_VERSION, version);
-			dc.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
-//			dc.setCapability(MobileCapabilityType.APP, "E:\\MS\\Automation Softwares\\Appium\\Flipkart Online Shopping App_v7.8_apkpure.com.apk");
-//			dc.setCapability("appPackage", "com.android.calculator2");
-//			dc.setCapability("appActivity", "com.android.calculator2.Calculator");
-//			dc.setCapability("appPackage", "com.google.android.dialer");
-//			dc.setCapability("appActivity", "com.google.android.apps.dialer.extensions.GoogleDialtactsActivity");
-			dc.setCapability("appPackage", "com.google.android.apps.messaging");
-			dc.setCapability("appActivity", "com.google.android.apps.messaging.ui.ConversationListActivity");
-//			dc.setCapability("appPackage", "com.touchboarder.android.api.demos");
-//			dc.setCapability("appActivity", "com.touchboarder.androidapidemos.MainActivity");
-			URL url = new URL("http://127.0.0.1:4723/wd/hub");		
-			driver = new AndroidDriver<WebElement>(url, dc);			
-			return driver;
+				AndroidDriver<WebElement> driver=null;
+				DesiredCapabilities dc = new DesiredCapabilities();
+				dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
+				dc.setCapability(MobileCapabilityType.PLATFORM_NAME, platform);
+				dc.setCapability(MobileCapabilityType.PLATFORM_VERSION, version);
+				dc.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
+	//			dc.setCapability(MobileCapabilityType.APP, "E:\\MS\\Automation Softwares\\Appium\\Flipkart Online Shopping App_v7.8_apkpure.com.apk");
+	//			dc.setCapability("appPackage", "com.android.calculator2");
+	//			dc.setCapability("appActivity", "com.android.calculator2.Calculator");
+	//			dc.setCapability("appPackage", "com.google.android.dialer");
+	//			dc.setCapability("appActivity", "com.google.android.apps.dialer.extensions.GoogleDialtactsActivity");
+	//			dc.setCapability("appPackage", "com.google.android.apps.messaging");
+	//			dc.setCapability("appActivity", "com.google.android.apps.messaging.ui.ConversationListActivity");
+				dc.setCapability("appPackage", "com.touchboarder.android.api.demos");
+				dc.setCapability("appActivity", "com.touchboarder.androidapidemos.MainActivity");
+				dc.setCapability("unicodeKeyboard", "true");                                     
+				dc.setCapability("resetKeyboard", "true");
+				URL url = new URL("http://127.0.0.1:4723/wd/hub");		
+				driver = new AndroidDriver<WebElement>(url, dc);		
+				return driver;
+			
+		}
+		
+		public static AndroidDriver<WebElement> getAndroidMobileWebAppDriver(String platform,String version,String deviceName) throws MalformedURLException
+		{			
+				AndroidDriver<WebElement> driver=null;
+				DesiredCapabilities dc = new DesiredCapabilities();
+				dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
+				dc.setCapability(MobileCapabilityType.PLATFORM_NAME, platform);
+				dc.setCapability(MobileCapabilityType.PLATFORM_VERSION, version);
+				dc.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);	
+				dc.setCapability("appPackage", "com.touchboarder.android.api.demos");
+				dc.setCapability("appActivity", "com.touchboarder.androidapidemos.MainActivity");
+				dc.setCapability("browserName", "Chrome");                                 
+				dc.setCapability("noReset", true); 
+				String filePath = System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe";
+				System.setProperty("webdriver.chrome.driver", filePath);
+				URL url = new URL("http://127.0.0.1:4723/wd/hub");		
+				driver = new AndroidDriver<WebElement>(url, dc);		
+				return driver;
+			
+		}
+		
+		public static IOSDriver<WebElement> getIOSMobileAppDriver(String platform,String version,String deviceName) throws MalformedURLException
+		{			
+				IOSDriver<WebElement> driver=null;
+				DesiredCapabilities dc = new DesiredCapabilities();
+				dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
+				dc.setCapability(MobileCapabilityType.PLATFORM_NAME, platform);
+				dc.setCapability(MobileCapabilityType.PLATFORM_VERSION, version);
+				dc.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);	
+				dc.setCapability("appPackage", "com.touchboarder.android.api.demos");
+				dc.setCapability("appActivity", "com.touchboarder.androidapidemos.MainActivity");				
+				URL url = new URL("http://127.0.0.1:4723/wd/hub");		
+				driver = new IOSDriver<WebElement>(url, dc);		
+				return driver;
 			
 		}
 		

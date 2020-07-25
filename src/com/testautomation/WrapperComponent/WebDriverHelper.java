@@ -53,6 +53,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
@@ -1186,38 +1187,65 @@ public class WebDriverHelper{
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public void mobileDragAndDrop(WebElement source, WebElement target)
+	public void mobileDragAndDrop(WebElement source, WebElement target) throws IOException
 	{
 		TouchAction action = new TouchAction((MobileDriver)driver);
-		action.longPress(ElementOption.element(source)).moveTo(ElementOption.element(target)).release().perform();
+		try {
+			action.longPress(ElementOption.element(source)).moveTo(ElementOption.element(target)).release().perform();
+			report.updateTestLog("Darg and Drop", "Souce " + source	+ "  is dragged and dropped in "+target+ " successfully", Status.PASS);
+		} catch (IOException e) {
+			report.updateTestLog("Darg and Drop", "Souce " + source	+ "  is not dragged and not dropped in "+target+ " successfully", Status.FAIL);
+		}
 		
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public void mobileHorizontalScroll(WebElement ele, int xOffset, int yOffset)
+	public void mobileHorizontalScroll(WebElement ele, int xOffset, int yOffset) throws IOException
 	{
 		TouchAction action = new TouchAction((MobileDriver)driver);
-		action.longPress(ElementOption.element(ele)).moveTo(ElementOption.element(ele,xOffset,yOffset)).release().perform();
+		try {
+			action.longPress(ElementOption.element(ele)).moveTo(ElementOption.element(ele,xOffset,yOffset)).release().perform();
+			report.updateTestLog("Horizondal scroll", "Scrolled to the element  " + ele	+ "  successfully", Status.PASS);
+		} catch (IOException e) {
+			report.updateTestLog("Horizondal scroll", "Not Scrolled to the element  " + ele	+ "  successfully", Status.FAIL);
+		}
 	}
 	
-	public void mobileScrollToViewAndClick(String value)
+	public void mobileScrollToViewAndClick(String value) throws IOException
 	{
-		MobileElement listitem = (MobileElement)driver.findElement(
-				MobileBy.AndroidUIAutomator(
-						"new UiScrollable(new UiSelector()).scrollIntoView("
-								+ "new UiSelector().contains(\"text\"));"));
-		
-		listitem.click();
+		try {
+			MobileElement listitem = (MobileElement)driver.findElement(
+					MobileBy.AndroidUIAutomator(
+							"new UiScrollable(new UiSelector()).scrollIntoView("
+									+ "new UiSelector().textContains(\""+value+"\"));"));
+			
+			listitem.click();
+			report.updateTestLog(value, "Scrolled to the element  " + value	+ "  and clicked successfully", Status.PASS);
+		} catch (IOException e) {
+			report.updateTestLog(value, "Scrolled to the element  " + value	+ "  and not clicked successfully", Status.FAIL);
+		}
 				
 	}
 	
+	public void mobileScrollToView(String value) throws IOException
+	{
+		try {
+			driver.findElement(
+					MobileBy.AndroidUIAutomator(
+							"new UiScrollable(new UiSelector()).scrollIntoView("
+									+ "new UiSelector().textContains(\""+value+"\"));"));			
+			
+			report.updateTestLog(value, "Scrolled to the element  " + value	+ "  successfully", Status.PASS);
+		} catch (IOException e) {
+			report.updateTestLog(value, "Scrolled to the element  " + value	+ "  is not success", Status.FAIL);
+		}
+				
+	}
+	
+	
+	
 	      
-    @SuppressWarnings("rawtypes")
-	public void mobileTAB(WebElement element)
-    {
-    	TouchAction action = new TouchAction((MobileDriver)driver);    	
-    	action.tap(ElementOption.element(element)).release().perform();
-    }
+   
 		
 		
 }

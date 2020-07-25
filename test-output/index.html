@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,21 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunnerMobile" hash-for-method="main_method(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator)">main_method(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -115,17 +101,22 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunnerMobile" hash-for-method="main_method(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator)">main_method(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunnerMobile" hash-for-method="main_method(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator)">main_method(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunnerMobile" hash-for-method="main_method(TC_001_Calculator_Automation, 1, N, Android, 8.1, Android Emulator)">main_method(TC_001_Calculator_Automation, 1, N, Android, 8.1, Android Emulator)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunnerMobile" hash-for-method="main_method(TC_003_Send_SMS_In_Android_Mobile, 1, N, Android, 8.1, Android Emulator)">main_method(TC_003_Send_SMS_In_Android_Mobile, 1, N, Android, 8.1, Android Emulator)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunnerMobile" hash-for-method="main_method(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator)">main_method(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -140,61 +131,28 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.testautomation.TestRunner.TestRunnerMobile</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="main_method(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator)">
-                  </a> <!-- main_method(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator) -->
-                  <span class="method-name">main_method</span>
-                  <span class="parameters">(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator)</span>
-                  <div class="stack-trace">org.openqa.selenium.InvalidSelectorException: Could not parse expression `new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().contains(&quot;text&quot;))`: `UiScrollable` doesn&apos;t have suitable method `scrollIntoView` with arguments [new UiSelector().contains(&quot;text&quot;)]: Could not parse expression `new UiSelector().contains(&quot;text&quot;)`: UiSelector has no `contains` method
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;LAPTOP-NQDJFCIP&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_202&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.touchboarder.androidapi..., appPackage: com.touchboarder.android.ap..., automationName: Appium, databaseEnabled: false, desired: {appActivity: com.touchboarder.androidapi..., appPackage: com.touchboarder.android.ap..., automationName: Appium, deviceName: Android Emulator, platformName: android, platformVersion: 8.1}, deviceApiLevel: 27, deviceManufacturer: Google, deviceModel: Android SDK built for x86, deviceName: emulator-5554, deviceScreenDensity: 240, deviceScreenSize: 480x800, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 1.5, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 36, takesScreenshot: true, viewportRect: {height: 764, left: 0, top: 36, width: 480}, warnings: {}, webStorageEnabled: false}
-Session ID: 610ab98d-4339-4dce-b318-7bae8d52f271
-*** Element info: {Using=-android uiautomator, value=new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().contains(&quot;text&quot;));}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at io.appium.java_client.FindsByAndroidUIAutomator.findElementByAndroidUIAutomator(FindsByAndroidUIAutomator.java:38)
-	at io.appium.java_client.MobileBy$ByAndroidUIAutomator.findElement(MobileBy.java:210)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.testautomation.WrapperComponent.WebDriverHelper.mobileScrollToViewAndClick(WebDriverHelper.java:1191)
-	at com.testautomation.PageObjects.MobileAutomationPage.APIDemoOperation1(MobileAutomationPage.java:93)
-	at com.testautomation.StepDef.MobileAutomationStepDef.navigate_to_api_demos_and_click_on(MobileAutomationStepDef.java:39)
-	at ✽.Navigate to API demos and click on &quot;Views&quot;(Features/Mobile/MobileAutomation/MobileAutomation.feature:14)
-... Removed 4 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">com.testautomation.TestRunner.TestRunnerMobile</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="main_method(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator)">
+                  </a> <!-- main_method(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator) -->
+                  <span class="method-name">main_method</span>
+                  <span class="parameters">(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="main_method(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator)">
+                  </a> <!-- main_method(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator) -->
+                  <span class="method-name">main_method</span>
+                  <span class="parameters">(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="main_method(TC_001_Calculator_Automation, 1, N, Android, 8.1, Android Emulator)">
@@ -209,14 +167,6 @@ Session ID: 610ab98d-4339-4dce-b318-7bae8d52f271
                   </a> <!-- main_method(TC_003_Send_SMS_In_Android_Mobile, 1, N, Android, 8.1, Android Emulator) -->
                   <span class="method-name">main_method</span>
                   <span class="parameters">(TC_003_Send_SMS_In_Android_Mobile, 1, N, Android, 8.1, Android Emulator)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="main_method(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator)">
-                  </a> <!-- main_method(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator) -->
-                  <span class="method-name">main_method</span>
-                  <span class="parameters">(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -277,24 +227,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'main_method')
 data.setCell(0, 2, 'com.testautomation.TestRunner.TestRunnerMobile')
-data.setCell(0, 3, 14359);
+data.setCell(0, 3, 56196);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'main_method')
 data.setCell(1, 2, 'com.testautomation.TestRunner.TestRunnerMobile')
-data.setCell(1, 3, 3);
+data.setCell(1, 3, 9);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'main_method')
 data.setCell(2, 2, 'com.testautomation.TestRunner.TestRunnerMobile')
-data.setCell(2, 3, 1);
+data.setCell(2, 3, 2);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'main_method')
 data.setCell(3, 2, 'com.testautomation.TestRunner.TestRunnerMobile')
-data.setCell(3, 3, 1);
+data.setCell(3, 3, 2);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 56 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -327,45 +277,43 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">125 ms</span>
+                <span class="method-start">260 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">main_method(TC_001_Calculator_Automation, 1, N, Android, 8.1, Android Emulator)</span>
-                <span class="method-start">723 ms</span>
+                <span class="method-start">1536 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownTest([TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, ja...)</span>
-                <span class="method-start">727 ms</span>
+                <span class="method-start">1547 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">main_method(TC_002_Dial_Mobile_Number, 1, N, Android, 8.1, Android Emulator)</span>
-                <span class="method-start">728 ms</span>
+                <span class="method-start">1550 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownTest([TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, ja...)</span>
-                <span class="method-start">730 ms</span>
+                <span class="method-start">1555 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">main_method(TC_003_Send_SMS_In_Android_Mobile, 1, N, Android, 8.1, Android Emulator)</span>
-                <span class="method-start">730 ms</span>
+                <span class="method-start">1555 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownTest([TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, ja...)</span>
-                <span class="method-start">732 ms</span>
+                <span class="method-start">1561 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">main_method(TC_004_Operation_On_API_Demos_App, 1, Y, Android, 8.1, Android Emulator)</span>
-                <span class="method-start">732 ms</span>
+                <span class="method-start">1561 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDownTest([TestResult name=main_method status=FAILURE method=TestRunnerMobile.main_method(java.lang.String, ja...)</span>
-                <span class="method-start">15096 ms</span>
+                <span class="method-name">tearDownTest([TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, ja...)</span>
+                <span class="method-start">57759 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">15648 ms</span>
+                <span class="method-start">58280 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

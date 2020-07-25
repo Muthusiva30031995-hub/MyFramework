@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="4" passed="3">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="16100" started-at="2020-07-20T05:16:40Z" finished-at="2020-07-20T05:16:56Z">
+  <suite name="Suite" duration-ms="58295" started-at="2020-07-25T09:30:10Z" finished-at="2020-07-25T09:31:08Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="16100" started-at="2020-07-20T05:16:40Z" finished-at="2020-07-20T05:16:56Z">
+    <test name="Test" duration-ms="58295" started-at="2020-07-25T09:30:10Z" finished-at="2020-07-25T09:31:08Z">
       <class name="com.testautomation.TestRunner.TestRunnerMobile">
-        <test-method status="PASS" signature="beforeSetup()[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="beforeSetup" is-config="true" duration-ms="122" started-at="2020-07-20T10:46:40Z" finished-at="2020-07-20T10:46:40Z">
+        <test-method status="PASS" signature="beforeSetup()[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="beforeSetup" is-config="true" duration-ms="253" started-at="2020-07-25T15:00:10Z" finished-at="2020-07-25T15:00:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSetup -->
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="setUpClass" is-config="true" duration-ms="84" started-at="2020-07-20T10:46:40Z" finished-at="2020-07-20T10:46:41Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="setUpClass" is-config="true" duration-ms="178" started-at="2020-07-25T15:00:10Z" finished-at="2020-07-25T15:00:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="main_method" duration-ms="3" started-at="2020-07-20T10:46:41Z" data-provider="testcasesList" finished-at="2020-07-20T10:46:41Z">
+        <test-method status="PASS" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="main_method" duration-ms="9" started-at="2020-07-25T15:00:11Z" data-provider="testcasesList" finished-at="2020-07-25T15:00:11Z">
           <params>
             <param index="0">
               <value>
@@ -51,18 +51,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main_method -->
-        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="tearDownTest" is-config="true" duration-ms="1" started-at="2020-07-20T10:46:41Z" finished-at="2020-07-20T10:46:41Z">
+        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="tearDownTest" is-config="true" duration-ms="3" started-at="2020-07-25T15:00:11Z" finished-at="2020-07-25T15:00:11Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3] output={null}]]]>
+                <![CDATA[[TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownTest -->
-        <test-method status="PASS" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="main_method" duration-ms="1" started-at="2020-07-20T10:46:41Z" data-provider="testcasesList" finished-at="2020-07-20T10:46:41Z">
+        <test-method status="PASS" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="main_method" duration-ms="2" started-at="2020-07-25T15:00:11Z" data-provider="testcasesList" finished-at="2020-07-25T15:00:11Z">
           <params>
             <param index="0">
               <value>
@@ -98,7 +98,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main_method -->
-        <test-method status="PASS" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="main_method" duration-ms="1" started-at="2020-07-20T10:46:41Z" data-provider="testcasesList" finished-at="2020-07-20T10:46:41Z">
+        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="tearDownTest" is-config="true" duration-ms="0" started-at="2020-07-25T15:00:11Z" finished-at="2020-07-25T15:00:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownTest -->
+        <test-method status="PASS" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="main_method" duration-ms="2" started-at="2020-07-25T15:00:11Z" data-provider="testcasesList" finished-at="2020-07-25T15:00:11Z">
           <params>
             <param index="0">
               <value>
@@ -134,29 +145,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main_method -->
-        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="tearDownTest" is-config="true" duration-ms="0" started-at="2020-07-20T10:46:41Z" finished-at="2020-07-20T10:46:41Z">
+        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="tearDownTest" is-config="true" duration-ms="0" started-at="2020-07-25T15:00:11Z" finished-at="2020-07-25T15:00:11Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3] output={null}]]]>
+                <![CDATA[[TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownTest -->
-        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="tearDownTest" is-config="true" duration-ms="0" started-at="2020-07-20T10:46:41Z" finished-at="2020-07-20T10:46:41Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownTest -->
-        <test-method status="FAIL" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="main_method" duration-ms="14359" started-at="2020-07-20T10:46:41Z" data-provider="testcasesList" finished-at="2020-07-20T10:46:55Z">
+        <test-method status="PASS" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="main_method" duration-ms="56196" started-at="2020-07-25T15:00:11Z" data-provider="testcasesList" finished-at="2020-07-25T15:01:08Z">
           <params>
             <param index="0">
               <value>
@@ -189,71 +189,21 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.InvalidSelectorException">
-            <message>
-              <![CDATA[Could not parse expression `new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().contains("text"))`: `UiScrollable` doesn't have suitable method `scrollIntoView` with arguments [new UiSelector().contains("text")]: Could not parse expression `new UiSelector().contains("text")`: UiSelector has no `contains` method
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LAPTOP-NQDJFCIP', ip: '192.168.1.7', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.touchboarder.androidapi..., appPackage: com.touchboarder.android.ap..., automationName: Appium, databaseEnabled: false, desired: {appActivity: com.touchboarder.androidapi..., appPackage: com.touchboarder.android.ap..., automationName: Appium, deviceName: Android Emulator, platformName: android, platformVersion: 8.1}, deviceApiLevel: 27, deviceManufacturer: Google, deviceModel: Android SDK built for x86, deviceName: emulator-5554, deviceScreenDensity: 240, deviceScreenSize: 480x800, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 1.5, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 36, takesScreenshot: true, viewportRect: {height: 764, left: 0, top: 36, width: 480}, warnings: {}, webStorageEnabled: false}
-Session ID: 610ab98d-4339-4dce-b318-7bae8d52f271
-*** Element info: {Using=-android uiautomator, value=new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().contains("text"));}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.InvalidSelectorException: Could not parse expression `new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().contains("text"))`: `UiScrollable` doesn't have suitable method `scrollIntoView` with arguments [new UiSelector().contains("text")]: Could not parse expression `new UiSelector().contains("text")`: UiSelector has no `contains` method
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LAPTOP-NQDJFCIP', ip: '192.168.1.7', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.touchboarder.androidapi..., appPackage: com.touchboarder.android.ap..., automationName: Appium, databaseEnabled: false, desired: {appActivity: com.touchboarder.androidapi..., appPackage: com.touchboarder.android.ap..., automationName: Appium, deviceName: Android Emulator, platformName: android, platformVersion: 8.1}, deviceApiLevel: 27, deviceManufacturer: Google, deviceModel: Android SDK built for x86, deviceName: emulator-5554, deviceScreenDensity: 240, deviceScreenSize: 480x800, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 1.5, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 36, takesScreenshot: true, viewportRect: {height: 764, left: 0, top: 36, width: 480}, warnings: {}, webStorageEnabled: false}
-Session ID: 610ab98d-4339-4dce-b318-7bae8d52f271
-*** Element info: {Using=-android uiautomator, value=new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().contains("text"));}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at io.appium.java_client.FindsByAndroidUIAutomator.findElementByAndroidUIAutomator(FindsByAndroidUIAutomator.java:38)
-	at io.appium.java_client.MobileBy$ByAndroidUIAutomator.findElement(MobileBy.java:210)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.testautomation.WrapperComponent.WebDriverHelper.mobileScrollToViewAndClick(WebDriverHelper.java:1191)
-	at com.testautomation.PageObjects.MobileAutomationPage.APIDemoOperation1(MobileAutomationPage.java:93)
-	at com.testautomation.StepDef.MobileAutomationStepDef.navigate_to_api_demos_and_click_on(MobileAutomationStepDef.java:39)
-	at ✽.Navigate to API demos and click on "Views"(Features/Mobile/MobileAutomation/MobileAutomation.feature:14)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main_method -->
-        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="tearDownTest" is-config="true" duration-ms="552" started-at="2020-07-20T10:46:55Z" finished-at="2020-07-20T10:46:56Z">
+        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="tearDownTest" is-config="true" duration-ms="520" started-at="2020-07-25T15:01:08Z" finished-at="2020-07-25T15:01:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=main_method status=FAILURE method=TestRunnerMobile.main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3] output={null}]]]>
+                <![CDATA[[TestResult name=main_method status=SUCCESS method=TestRunnerMobile.main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownTest -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@275bf9b3]" name="tearDownClass" is-config="true" duration-ms="447" started-at="2020-07-20T10:46:56Z" finished-at="2020-07-20T10:46:56Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunnerMobile@43301423]" name="tearDownClass" is-config="true" duration-ms="7" started-at="2020-07-25T15:01:08Z" finished-at="2020-07-25T15:01:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

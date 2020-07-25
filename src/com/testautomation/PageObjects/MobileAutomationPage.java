@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import com.testautomation.Config.InstanceContainer;
 import com.testautomation.PageUI.MobileAutomationPageUI;
 
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 
 public class MobileAutomationPage extends PageBase{
@@ -67,7 +69,7 @@ public class MobileAutomationPage extends PageBase{
 		wh.enterValue(MobileAutomationPageUI.toNumber, mobileNoToSend, "To");
 		Thread.sleep(3000);
 		WebElement ele = driver.findElement(MobileAutomationPageUI.toNumber);
-		wh.mobileTAB(ele);
+		
 		wh.enterValue(MobileAutomationPageUI.messageText, messageToSend, "Message Text Field");
 		wh.clickElement(MobileAutomationPageUI.sendMsgSymbol, "Send Message");		
 		wh.validateText(MobileAutomationPageUI.messageSent, messageToSend, "Verify Message");	
@@ -78,6 +80,7 @@ public class MobileAutomationPage extends PageBase{
 	
 	public void APIDemoOperation1(String text) throws Exception
 	{		
+		Thread.sleep(2000);
 		if(wh.isElementExists(MobileAutomationPageUI.licenseOkBtn))
 		{
 			wh.clickElement(MobileAutomationPageUI.licenseOkBtn, "License Ok Button");
@@ -91,12 +94,47 @@ public class MobileAutomationPage extends PageBase{
 				break;
 			}
 		}
-		AndroidElement list1 = (AndroidElement) driver.findElement(By.id("android:id/text1"));
+		
+		wh.mobileScrollToViewAndClick("Views");
+		
 		wh.mobileScrollToViewAndClick(text);
 		
+		Thread.sleep(2000);
 		
 		
 		
+	}
+	
+	public void APIDemoOperation2() throws Exception
+	{
+		String text1 = excelData.getData("Text1");
+		String text2 = excelData.getData("Text2");
+		
+		Thread.sleep(2000);
+		if(wh.isElementExists(MobileAutomationPageUI.licenseOkBtn))
+		{
+			wh.clickElement(MobileAutomationPageUI.licenseOkBtn, "License Ok Button");
+		}
+		List<WebElement> list = driver.findElements(By.id("android:id/text1"));
+		for(WebElement item:list)
+		{
+			if(item.getText().contains("API Demos"))
+			{
+				item.click();
+				break;
+			}
+		}
+		
+		wh.mobileScrollToViewAndClick("Views");
+		wh.clickElement(MobileAutomationPageUI.controlsLink, "License Ok Button");
+		wh.clickElement(MobileAutomationPageUI.darkThemeLink, "License Ok Button");
+		wh.enterValue(MobileAutomationPageUI.darkThemeTextBox1, text1, "Textbox 1");
+		wh.enterValue(MobileAutomationPageUI.darkThemeTextBox2, text2, "Textbox 2");
+		wh.clickElement(MobileAutomationPageUI.checkBox1, "Checkbox 1");
+		wh.clickElement(MobileAutomationPageUI.radioBtn2, "Radio Button 2");
+		wh.mobileScrollToView("Mercury");
+		wh.clickElement(MobileAutomationPageUI.starDropdown, "Start Drop down");
+		wh.clickElement(MobileAutomationPageUI.marsOption, "Mars Option");
 		
 	}
 	

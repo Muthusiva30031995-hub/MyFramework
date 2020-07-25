@@ -145,12 +145,24 @@ public class TestRunnerMobile{
 		iterationCount = Integer.parseInt(iteration);
 		commonData.iterationCount = iterationCount;
 //		 && slaveno.trim().replaceAll("\n","").equalsIgnoreCase(slavePOM)
+		String browserName = "Chrome";
 		if(execute.trim().replaceAll("\n","").equalsIgnoreCase("Y"))
 			{
 				System.out.println(ScenarioName); 				
 				for(int i=1;i<=iterationCount;i++)
-				{				
-				driver = WebDriverFactory.getMobileAppDriver(platform, version, deviceName);				
+				{	
+					if(platform.equalsIgnoreCase("Android"))
+					{
+						driver = WebDriverFactory.getAndroidMobileAppDriver(platform, version, deviceName);
+					}
+					else if(platform.equalsIgnoreCase("IOS"))
+					{
+						driver = WebDriverFactory.getIOSMobileAppDriver(platform, version, deviceName);
+					}
+					else
+					{
+						
+					}
 				excelData.setCurrentRow(ScenarioName,i);
 				test = extent.createTest(ScenarioName);	
 				report = new Report(test);

@@ -25,6 +25,14 @@ public class MobileAutomationPageUI {
 	public static final By messageSent = By.className("android.widget.FrameLayout");
 	public static final By sendMsgSymbol = By.id("com.google.android.apps.messaging:id/send_message_button_container");
 	public static final By licenseOkBtn = By.id("com.touchboarder.android.api.demos:id/buttonDefaultPositive");
+	public static final By controlsLink = By.xpath("//*[@text='Controls']");
+	public static final By darkThemeLink = By.xpath("//*[@text='02. Dark Theme']");
+	public static final By darkThemeTextBox1 = By.id("com.touchboarder.android.api.demos:id/edit");
+	public static final By darkThemeTextBox2 = By.id("com.touchboarder.android.api.demos:id/edit2");
+	public static final By checkBox1 = By.xpath("//*[@text='Checkbox 1']");
+	public static final By starDropdown = By.id("com.touchboarder.android.api.demos:id/spinner1");
+	public static final By radioBtn2 = By.id("com.touchboarder.android.api.demos:id/radio2");
+	public static final By marsOption = By.xpath("//*[@text='Mars']");
 	
 	
 }
