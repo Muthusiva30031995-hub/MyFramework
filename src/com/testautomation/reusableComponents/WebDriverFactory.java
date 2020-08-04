@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
 import org.openqa.selenium.winium.WiniumDriverService;
@@ -50,15 +51,18 @@ public class WebDriverFactory {
 			{	
 				driver = getChromeDriver();
 			}
-			
+			else if(browserName.equalsIgnoreCase("firefox"))
+			{	
+				driver = getFirefoxDriver();
+			}
 				
 			
 		}
 		return driver;
 	}
 	
-	
-	public static WebDriver getDesktopWebDriver() throws Exception {
+		
+	public static WiniumDriver getDesktopWebDriver() throws Exception {
 		WiniumDriver driver = null;
 		options  = new DesktopOptions();		
 //		String applicationPath = "C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe";
@@ -79,13 +83,29 @@ public class WebDriverFactory {
 		
 	
 	
-		private static WebDriver getChromeDriver() throws InterruptedException {			
-			String filePath = ReusableData.currentDir+"\\Drivers\\chromedriver.exe";
-			File file = new File(filePath);
-			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());			    	
-			driver = new ChromeDriver();	
-			driver.manage().deleteAllCookies();	
-			driver.manage().window().maximize();
+		private static WebDriver getChromeDriver() throws InterruptedException, MalformedURLException {			
+//			String filePath = ReusableData.currentDir+"\\Drivers\\chromedriver.exe";
+//			File file = new File(filePath);
+//			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());			    	
+//			driver = new ChromeDriver();	
+//			driver.manage().deleteAllCookies();	
+//			driver.manage().window().maximize();	
+			DesiredCapabilities dc = new DesiredCapabilities().chrome();
+			URL url = new URL("http://192.168.99.100:4444/wd/hub");
+			RemoteWebDriver driver = new RemoteWebDriver(url,dc); 					
+			return driver;			
+		}
+		
+		private static WebDriver getFirefoxDriver() throws InterruptedException, MalformedURLException {			
+//			String filePath = ReusableData.currentDir+"\\Drivers\\chromedriver.exe";
+//			File file = new File(filePath);
+//			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());			    	
+//			driver = new ChromeDriver();	
+//			driver.manage().deleteAllCookies();	
+//			driver.manage().window().maximize();	
+			DesiredCapabilities dc = new DesiredCapabilities().chrome();
+			URL url = new URL("http://192.168.99.100:4444/wd/hub");
+			RemoteWebDriver driver = new RemoteWebDriver(url,dc); 					
 			return driver;			
 		}
 		

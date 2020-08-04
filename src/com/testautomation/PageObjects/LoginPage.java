@@ -35,7 +35,7 @@ public class LoginPage extends PageBase{
 		application = applicationName;
 //		environment=properties.getProperty("Environment");	
 		environment = System.getProperty("regressionnenv");
-		if(application.equalsIgnoreCase("GWCC")) {			
+		if(application.equalsIgnoreCase("OrangeHRM")) {			
 			if(environment.equalsIgnoreCase("TEST")) 
 				application_url = properties.getProperty("GWCC_TEST_URL");			
 			else if(environment.equalsIgnoreCase("MODL"))
@@ -45,6 +45,7 @@ public class LoginPage extends PageBase{
 		}			
 		driver.get(application_url);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		System.out.println(driver.getTitle());
 		if(wh.isElementPresent(LoginPageUI.usernameTxt))
 		report.updateTestLog("Open Application", "Application is launched", Status.PASS);
 		else

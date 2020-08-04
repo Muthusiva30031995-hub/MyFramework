@@ -117,28 +117,12 @@
 </dependency>
 
 
-<!-- https://mvnrepository.com/artifact/net.sf.jt400/jt400 -->
-<dependency>
-    <groupId>net.sf.jt400</groupId>
-    <artifactId>jt400</artifactId>
-    <version>6.6</version>
-</dependency>
-
-
-<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
-<dependency>
-    <groupId>org.apache.pdfbox</groupId>
-    <artifactId>pdfbox</artifactId>
-    <version>1.8.11</version>
-</dependency>
-
-
 
 	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>3.0.1</version>
+    <version>3.141.59</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -159,29 +143,13 @@
 			<version>2.1</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>bson</artifactId>
-			<version>3.0.4</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.beust/jcommander -->
-		<dependency>
-			<groupId>com.beust</groupId>
-			<artifactId>jcommander</artifactId>
-			<version>1.48</version>
-		</dependency>
 		
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver -->
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongodb-driver</artifactId>
-			<version>3.0.4</version>
-		</dependency>
+		
 		
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -202,16 +170,7 @@
 			<version>6.9.9</version>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.pdfbox</groupId>
-			<artifactId>pdfbox</artifactId>
-			<version>1.8.11</version>
-		</dependency>
-		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
-			<version>1.4.01</version>
-		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 <dependency>
     <groupId>javax.mail</groupId>

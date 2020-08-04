@@ -1,6 +1,7 @@
 package com.testautomation.TestRunner;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -132,6 +133,11 @@ public class TestRunnerUI{
 //		extentReportPath = extentReportPathFolder + "\\ExtentReports_" +  projectName + "_"+ReusableComponents.getCurrentDateAndTime() + ".html";
 		commonData.extentReportPath = extentReportPath;
 		extent = Report.setup(extentReportPath);
+		
+		Runtime.getRuntime().exec("cmd /c start start_Docker_Grid.bat");
+		Thread.sleep(15000);
+//		Runtime.getRuntime().exec("cmd /c start Increase_Chrome.bat");
+//		Thread.sleep(15000);
 	}
 	
 	@Test(dataProvider = "testcasesList", enabled=true, alwaysRun=true)
@@ -269,6 +275,14 @@ public class TestRunnerUI{
 				execute="N";
 				extent.flush();
 		}
+	}
+	
+	@AfterTest
+	public void tearDownDocker() throws IOException, InterruptedException
+	{
+		Runtime.getRuntime().exec("cmd /c start stop_Docker_Grid.bat");
+		Thread.sleep(5000);
+		Runtime.getRuntime().exec("taskkill /f /im cmd.exe");
 	}
 	
 	@AfterClass(alwaysRun = true)

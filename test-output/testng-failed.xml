@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="none">
   <test name="Test(failed)" parallel="none">
     <classes>
-      <class name="com.testautomation.TestRunner.TestRunnerMobile">
+      <class name="com.testautomation.TestRunner.TestRunnerUI">
         <methods>
-          <include name="tearDownClass"/>
           <include name="beforeSetup"/>
           <include name="setUpClass"/>
-          <include name="main_method" invocation-numbers="3"/>
           <include name="tearDownTest"/>
+          <include name="tearDownClass"/>
+          <include name="main_method" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.testautomation.TestRunner.TestRunnerMobile -->
+      </class> <!-- com.testautomation.TestRunner.TestRunnerUI -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
