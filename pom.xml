@@ -15,15 +15,19 @@
 		<java.home>C:/Program Files/Java/jdk1.8.0_212/bin</java.home> 
 			<testng.filename>${env.testng}</testng.filename>
 			
-		<testng.environ>TEST</testng.environ> 
-		<testng.slave>slave1</testng.slave> 
-		<testng.ExeID>NATSM-47179</testng.ExeID> 	 	
+		<!-- <testng.environ>TEST</testng.environ> 
+		<testng.slave>slave1</testng.slave>  -->
+		
+		
+		<!-- <testng.ExeID>NATSM-47179</testng.ExeID>  -->	 	
 
 		
 			
-	<!-- 	 <testng.environ>${env.envir}</testng.environ>
+		 <testng.environ>${env.envir}</testng.environ>
 		<testng.slave>${env.slave}</testng.slave>
-		<testng.ExeID>${env.testEID}</testng.ExeID> -->
+		
+		
+		<!-- <testng.ExeID>${env.testEID}</testng.ExeID>  -->
 	</properties>
 
 	<!-- <resources> -->
@@ -270,10 +274,11 @@
 							<!-- <regressionExeID>${testng.ExeID}</regressionExeID> -->
 							<regressionnenv>${testng.environ}</regressionnenv>
 							<regressionslave>${testng.slave}</regressionslave>
-							<regressionExeID>${testng.ExeID}</regressionExeID>
+							<!-- <regressionExeID>${testng.ExeID}</regressionExeID> -->
 						</systemPropertyVariables>
 						<suiteXmlFiles>
 							<suiteXmlFile>${testng.filename}</suiteXmlFile>
+							<!-- <suiteXmlFile>testngUI.xml</suiteXmlFile> -->
 <!-- 							<suiteXmlFile>${testng.filename}</suiteXmlFile> -->
 						</suiteXmlFiles>  
 			       </configuration>
