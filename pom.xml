@@ -12,7 +12,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<java.home>C:/Program Files/Java/jdk1.8.0_212/bin</java.home> 
+		<java.home>C:/Program Files/Java/jdk1.8.0_202/bin</java.home> 
 			
 			
 		<!-- <testng.environ>TEST</testng.environ> 
@@ -30,14 +30,7 @@
 		<!-- <testng.ExeID>${env.testEID}</testng.ExeID>  -->
 	</properties>
 
-	<!-- <resources> -->
-	<!-- <resource> -->
-	<!-- <directory>src</directory> -->
-	<!-- <excludes> -->
-	<!-- <exclude>**/*.java</exclude> -->
-	<!-- </excludes> -->
-	<!-- </resource> -->
-	<!-- </resources> -->
+	
 
 	<dependencies>
 		
@@ -239,22 +232,16 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.0.0-M2</version>
 					<configuration>
-						<systemPropertyVariables>
-							<!-- <regressionnenv>${testng.environ}</regressionnenv> -->
-							<!-- <regressionslave>${testng.slave}</regressionslave> -->
-							<!-- <regressionExeID>${testng.ExeID}</regressionExeID> -->
+						<systemPropertyVariables>							
 							<regressionnenv>${testng.environ}</regressionnenv>
 							<regressionslave>${testng.slave}</regressionslave>
 							<!-- <regressionExeID>${testng.ExeID}</regressionExeID> -->
 						</systemPropertyVariables>
 						<suiteXmlFiles>
-							<suiteXmlFile>${testng.filename}</suiteXmlFile>
-							<!-- <suiteXmlFile>testngUI.xml</suiteXmlFile> -->
-<!-- 							<suiteXmlFile>${testng.filename}</suiteXmlFile> -->
+							<suiteXmlFile>${testng.filename}</suiteXmlFile>							
 						</suiteXmlFiles>  
 			       </configuration>
-				</plugin>
-				
+				</plugin>				
 			</plugins>
 		</pluginManagement>
 	</build>
