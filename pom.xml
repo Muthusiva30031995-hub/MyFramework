@@ -57,7 +57,7 @@
     <groupId>io.rest-assured</groupId>
     <artifactId>rest-assured</artifactId>
     <version>4.3.0</version>
-    <scope>Compile</scope>
+    <scope>compile</scope>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
