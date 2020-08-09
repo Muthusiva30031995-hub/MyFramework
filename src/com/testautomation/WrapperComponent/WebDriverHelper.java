@@ -284,7 +284,7 @@ public class WebDriverHelper{
 	public boolean isElementPresent(By object) throws IOException {
 		Boolean elementPresent = false;		
 		try {
-			waitForPageToLoad();
+//			waitForPageToLoad();
 			WebDriverWait wait = new WebDriverWait(driver,ExplicitWaitTime);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(object));
 			wait.until(ExpectedConditions.elementToBeClickable(object));
@@ -1004,6 +1004,12 @@ public class WebDriverHelper{
 			}
 		return value;	
 	
+	}
+	
+	public void mouseMove(By locator) {
+		Actions action = new Actions(driver);
+		WebElement ele = driver.findElement(locator);
+		action.moveToElement(ele).build().perform();
 	}
 	
 	public void TAB(By locator)

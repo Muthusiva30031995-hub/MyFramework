@@ -4,12 +4,16 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.naming.AuthenticationException;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -17,6 +21,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -37,6 +42,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.PickleEventWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 import gherkin.pickles.PickleTag;
+
 
 
 
@@ -84,6 +90,8 @@ public class TestRunnerUI{
 	 String ls_Status = null;
 	 String masterEmailSubject = "BAU Automation Notification";
 	 Email email=new Email();
+	 private static List<WebDriver> webDriverPool = Collections.synchronizedList(new ArrayList<WebDriver>());
+	 private static ThreadLocal<WebDriver> driverThread;
 	 
 	@BeforeClass(alwaysRun = true)
 	public void setUpClass() throws Exception {
@@ -134,16 +142,19 @@ public class TestRunnerUI{
 		commonData.extentReportPath = extentReportPath;
 		extent = Report.setup(extentReportPath);
 		
-		Runtime.getRuntime().exec("cmd /c start start_Docker_Grid.bat");
-		Thread.sleep(15000);
+//		Runtime.getRuntime().exec("cmd /c start start_Docker_Grid.bat");
+//		Thread.sleep(15000);
 //		Runtime.getRuntime().exec("cmd /c start Increase_Chrome.bat");
 //		Thread.sleep(15000);
+		
+		
 	}
 	
-	@Test(dataProvider = "testcasesList", enabled=true, alwaysRun=true)
-	public void main_method(String scenarioName, String iteration, String executeFlag, String browser, String slave,String featureFile) throws Throwable
-	{ 
 		
+	
+	@Test(dataProvider = "testcasesList", enabled=true)	
+	public void main_method(String scenarioName, String iteration, String executeFlag, String browser, String slave,String featureFile) throws Throwable
+	{ 		
 		ScenarioName = scenarioName.trim().replaceAll("\n","");
 		CommonData.scenarioName = ScenarioName;
 		execute = executeFlag;
@@ -153,17 +164,36 @@ public class TestRunnerUI{
 		commonData.iterationCount = iterationCount;
 		
 		if(execute.trim().replaceAll("\n","").equalsIgnoreCase("Y") && slaveno.trim().replaceAll("\n","").equalsIgnoreCase(slavePOM))
-			{
+			{				
 				System.out.println(ScenarioName); 				
 				for(int i=1;i<=iterationCount;i++)
-				{				
-				driver = WebDriverFactory.getWebDriver(Browser.toLowerCase());				
+				{	
+//					driverThread = new ThreadLocal<WebDriver>()
+//					{
+//						@Override
+//						protected WebDriver initialValue()
+//						{
+//							WebDriver driver = null;
+//							try {
+//								driver = WebDriverFactory.getWebDriver(Browser.toLowerCase());
+//							} catch (Exception e) {
+//								e.printStackTrace();
+//							}
+//							webDriverPool.add(driver);
+//							return driver;
+//						}
+//					};
+//				driver = driverThread.get();	
+				driver = WebDriverFactory.getWebDriver(Browser.toLowerCase());
 				excelData.setCurrentRow(ScenarioName,i);
 				test = extent.createTest(ScenarioName);	
 				report = new Report(test);
 				wh = new WebDriverHelper(driver,report,excelData);
 				rc = new ReusableComponents(driver,wh,excelData,report,commonData);				 				
 				ic = new InstanceContainer(driver, wh, rc, commonData,excelData,report);
+//				ExecutorService parallelExecutor = Executors.newFixedThreadPool(2);
+//				ParallelRunner testRunner =	new ParallelRunner(ic);
+//				parallelExecutor.execute((Runnable) testRunner);
 				
 				//To store Screenshots in SharePath
 				//screenShotFolder= reportPath+"\\"+ScenarioName+"_"+ReusableComponents.getCurrentDateAndTime()+"\\"+"\\Screenshots\\"+"//";;		
@@ -186,8 +216,6 @@ public class TestRunnerUI{
 	
 	}
 		
-
-	
 	
 	@DataProvider()
     public Object[][] testcasesList() throws Exception{
@@ -277,13 +305,13 @@ public class TestRunnerUI{
 		}
 	}
 	
-	@AfterTest
-	public void tearDownDocker() throws IOException, InterruptedException
-	{
-		Runtime.getRuntime().exec("cmd /c start stop_Docker_Grid.bat");
-		Thread.sleep(5000);
-		Runtime.getRuntime().exec("taskkill /f /im cmd.exe");
-	}
+//	@AfterTest
+//	public void tearDownDocker() throws IOException, InterruptedException
+//	{
+//		Runtime.getRuntime().exec("cmd /c start stop_Docker_Grid.bat");
+//		Thread.sleep(5000);
+//		Runtime.getRuntime().exec("taskkill /f /im cmd.exe");
+//	}
 	
 	@AfterClass(alwaysRun = true)
     public void tearDownClass() throws Exception {

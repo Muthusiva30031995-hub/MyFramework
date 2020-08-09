@@ -84,15 +84,18 @@ public class WebDriverFactory {
 	
 	
 		private static WebDriver getChromeDriver() throws InterruptedException, MalformedURLException {			
-//			String filePath = ReusableData.currentDir+"\\Drivers\\chromedriver.exe";
-//			File file = new File(filePath);
-//			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());			    	
-//			driver = new ChromeDriver();	
+			String filePath = ReusableData.currentDir+"\\Drivers\\chromedriver.exe";
+			File file = new File(filePath);
+			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());			    	
+			driver = new ChromeDriver();	
+			driver.manage().deleteAllCookies();	
+			driver.manage().window().maximize();	
+//			DesiredCapabilities dc = new DesiredCapabilities().chrome();
+//			URL url = new URL("http://192.168.1.5:4444/wd/hub");
+//			URL url = new URL("http://192.168.99.100:4444/wd/hub");
+//			RemoteWebDriver driver = new RemoteWebDriver(url,dc); 
 //			driver.manage().deleteAllCookies();	
-//			driver.manage().window().maximize();	
-			DesiredCapabilities dc = new DesiredCapabilities().chrome();
-			URL url = new URL("http://192.168.99.100:4444/wd/hub");
-			RemoteWebDriver driver = new RemoteWebDriver(url,dc); 					
+//			driver.manage().window().maximize();
 			return driver;			
 		}
 		

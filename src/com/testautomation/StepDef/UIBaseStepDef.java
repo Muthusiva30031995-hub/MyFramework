@@ -15,6 +15,7 @@ import com.testautomation.PageObjects.LoginPage;
 import com.testautomation.PageObjects.LossDetailsPage;
 import com.testautomation.PageObjects.MSPDetailsPage;
 import com.testautomation.PageObjects.MatterPage;
+import com.testautomation.PageObjects.OrangeHRMPage;
 import com.testautomation.PageObjects.PartiesInvolvedPage;
 import com.testautomation.PageObjects.PaymentPage;
 import com.testautomation.PageObjects.PolicySearchPage;
@@ -33,7 +34,8 @@ import com.testautomation.TestRunner.TestRunnerUI;
 
 public class UIBaseStepDef extends TestRunnerUI {
 	
-	public  LoginPage loginPage = new LoginPage(ic);
+	public LoginPage loginPage = new LoginPage(ic);
+	public OrangeHRMPage orangeHRMPage = new OrangeHRMPage(ic);
 	public PolicySearchPage policySearchPage = new PolicySearchPage(ic);
 	public SearchContactPage searchContactPage = new SearchContactPage(ic);
 	public FNOLPage fnolPage = new FNOLPage(ic);

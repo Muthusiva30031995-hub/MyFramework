@@ -15,16 +15,16 @@
 		<java.home>C:/Program Files/Java/jdk1.8.0_202/bin</java.home> 
 			
 			
-		<!-- <testng.environ>TEST</testng.environ> 
+		<testng.environ>TEST</testng.environ> 
 		<testng.slave>slave1</testng.slave> 
-		<testng.filename>testngUI.xml</testng.filename> -->
+		<testng.filename>testngUI.xml</testng.filename>
 		
 		<!-- <testng.ExeID>NATSM-47179</testng.ExeID>  -->	 
 		
 			
-		 <testng.environ>${env.envir}</testng.environ>
+		<!--  <testng.environ>${env.envir}</testng.environ>
 		<testng.slave>${env.slave}</testng.slave>
-		<testng.filename>${env.testng}</testng.filename>
+		<testng.filename>${env.testng}</testng.filename> -->
 		
 		
 		<!-- <testng.ExeID>${env.testEID}</testng.ExeID>  -->
