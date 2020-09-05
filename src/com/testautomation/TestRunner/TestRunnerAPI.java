@@ -139,8 +139,9 @@ public class TestRunnerAPI{
 			{
 				System.out.println(ScenarioName); 				
 				for(int i=1;i<=iterationCount;i++)
-				{				
-				driver = WebDriverFactory.getWebDriver(Browser.toLowerCase());				
+				{	
+				WebDriverFactory driverFatcory = null;
+				driver = driverFatcory.getWebDriver(Browser.toLowerCase());				
 				excelData.setCurrentRow(ScenarioName,i);
 				test = extent.createTest(ScenarioName);	
 				report = new Report(test);

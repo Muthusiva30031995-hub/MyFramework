@@ -32,6 +32,7 @@ import com.testautomation.Config.CommonData;
 import com.testautomation.Config.InstanceContainer;
 import com.testautomation.Config.ReusableData;
 import com.testautomation.WrapperComponent.WebDriverHelper;
+import com.testautomation.reusableComponents.DriverFactory;
 import com.testautomation.reusableComponents.Email;
 import com.testautomation.reusableComponents.ExcelDataAccess;
 import com.testautomation.reusableComponents.Report;
@@ -54,7 +55,7 @@ public class TestRunnerUI{
 	  
 	 private TestNGCucumberRunner testNGCucumberRunner;	 
 	 public static ExcelDataAccess excelData;
-	 public static WebDriver driver;
+	 public WebDriver driver=null;
 	 public static CommonData commonData = new CommonData();	 
 	 public static InstanceContainer ic;
 	 public static WebDriverHelper wh;
@@ -90,8 +91,7 @@ public class TestRunnerUI{
 	 String ls_Status = null;
 	 String masterEmailSubject = "BAU Automation Notification";
 	 Email email=new Email();
-	 private static List<WebDriver> webDriverPool = Collections.synchronizedList(new ArrayList<WebDriver>());
-	 private static ThreadLocal<WebDriver> driverThread;
+	 
 	 
 	@BeforeClass(alwaysRun = true)
 	public void setUpClass() throws Exception {
@@ -152,9 +152,10 @@ public class TestRunnerUI{
 	
 		
 	
-	@Test(dataProvider = "testcasesList", enabled=true)	
+	@Test(dataProvider="testcasesList") 	
 	public void main_method(String scenarioName, String iteration, String executeFlag, String browser, String slave,String featureFile) throws Throwable
-	{ 		
+	{ 	
+		
 		ScenarioName = scenarioName.trim().replaceAll("\n","");
 		CommonData.scenarioName = ScenarioName;
 		execute = executeFlag;
@@ -163,38 +164,25 @@ public class TestRunnerUI{
 		iterationCount = Integer.parseInt(iteration);
 		commonData.iterationCount = iterationCount;
 		
+		
 		if(execute.trim().replaceAll("\n","").equalsIgnoreCase("Y") && slaveno.trim().replaceAll("\n","").equalsIgnoreCase(slavePOM))
 			{				
 				System.out.println(ScenarioName); 				
 				for(int i=1;i<=iterationCount;i++)
-				{	
-//					driverThread = new ThreadLocal<WebDriver>()
-//					{
-//						@Override
-//						protected WebDriver initialValue()
-//						{
-//							WebDriver driver = null;
-//							try {
-//								driver = WebDriverFactory.getWebDriver(Browser.toLowerCase());
-//							} catch (Exception e) {
-//								e.printStackTrace();
-//							}
-//							webDriverPool.add(driver);
-//							return driver;
-//						}
-//					};
-//				driver = driverThread.get();	
-				driver = WebDriverFactory.getWebDriver(Browser.toLowerCase());
+				{
+					DriverFactory driverFactory = DriverFactory.getInstance();
+					driverFactory.setDriver(Browser);
+					driver = driverFactory.getDriver();
+//				driver = WebDriverFactory.getWebDriver(Browser.toLowerCase());
+//				DriverFactory.getInstance().setDriver(driver);
+//				driver = DriverFactory.getInstance().getDriver();
 				excelData.setCurrentRow(ScenarioName,i);
 				test = extent.createTest(ScenarioName);	
 				report = new Report(test);
 				wh = new WebDriverHelper(driver,report,excelData);
 				rc = new ReusableComponents(driver,wh,excelData,report,commonData);				 				
 				ic = new InstanceContainer(driver, wh, rc, commonData,excelData,report);
-//				ExecutorService parallelExecutor = Executors.newFixedThreadPool(2);
-//				ParallelRunner testRunner =	new ParallelRunner(ic);
-//				parallelExecutor.execute((Runnable) testRunner);
-				
+
 				//To store Screenshots in SharePath
 				//screenShotFolder= reportPath+"\\"+ScenarioName+"_"+ReusableComponents.getCurrentDateAndTime()+"\\"+"\\Screenshots\\"+"//";;		
 //				failedScreenShotFolder = reportPath+"\\"+ScenarioName+"_"+ReusableComponents.getCurrentDateAndTime()+"\\"+"\\Screenshots\\"+"\\"+"\\Failed\\"+"//";;
@@ -207,7 +195,7 @@ public class TestRunnerUI{
 				commonData.failedScreenShotFolder =failedScreenShotFolder;
 				test.log(Status.PASS, "Test Execution is starting");
 				ReusableComponents.runScenario(testNGCucumberRunner,ScenarioName);				
-				driver.quit();
+//				driver.quit();
 				}
 										
 			}
@@ -217,7 +205,7 @@ public class TestRunnerUI{
 	}
 		
 	
-	@DataProvider()
+	@DataProvider(name ="testcasesList",parallel=true)
     public Object[][] testcasesList() throws Exception{
          Object[][] testObjArray = ExcelDataAccess.getTableArray(ExecutionSheetPath, "BDD");
          return (testObjArray);	
@@ -319,7 +307,7 @@ public class TestRunnerUI{
             return;
         }
         testNGCucumberRunner.finish();
-        driver.quit();
+//        driver.quit();
     }
 	
 	

@@ -29,15 +29,22 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 
 
-public class WebDriverFactory {	
+public class WebDriverFactory extends Thread{	
 	private static Properties properies;
 	static String headless = null;
 	public static DesktopOptions options= null;
 	
 	public static WiniumDriverService service = null;
-	static WebDriver driver;
+	private static WebDriverFactory instance = new WebDriverFactory();
+	ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
 	
-	public static WebDriver getWebDriver(String browserName) throws Exception {
+	private WebDriverFactory()
+	{
+		
+	}
+	
+	
+	public WebDriver getWebDriver(String browserName) throws Exception {
 		WebDriver driver =null;	
 		properies = ReusableComponents.loadFromPropertiesFile();		
 		headless = properies.getProperty("HeadlessMode");
@@ -62,7 +69,7 @@ public class WebDriverFactory {
 	}
 	
 		
-	public static WiniumDriver getDesktopWebDriver() throws Exception {
+	public WiniumDriver getDesktopWebDriver() throws Exception {
 		WiniumDriver driver = null;
 		options  = new DesktopOptions();		
 //		String applicationPath = "C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe";
@@ -83,23 +90,25 @@ public class WebDriverFactory {
 		
 	
 	
-		private static WebDriver getChromeDriver() throws InterruptedException, MalformedURLException {			
-			String filePath = ReusableData.currentDir+"\\Drivers\\chromedriver.exe";
-			File file = new File(filePath);
-			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());			    	
-			driver = new ChromeDriver();	
-			driver.manage().deleteAllCookies();	
-			driver.manage().window().maximize();	
-//			DesiredCapabilities dc = new DesiredCapabilities().chrome();
-//			URL url = new URL("http://192.168.1.5:4444/wd/hub");
-//			URL url = new URL("http://192.168.99.100:4444/wd/hub");
-//			RemoteWebDriver driver = new RemoteWebDriver(url,dc); 
+		private WebDriver getChromeDriver() throws InterruptedException, MalformedURLException {		
+//			WebDriver driver =null;	
+//			String filePath = ReusableData.currentDir+"\\Drivers\\chromedriver.exe";
+//			File file = new File(filePath);
+//			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());			    	
+//			driver = new ChromeDriver();	
 //			driver.manage().deleteAllCookies();	
-//			driver.manage().window().maximize();
+//			driver.manage().window().maximize();	
+			DesiredCapabilities dc = new DesiredCapabilities().chrome();
+			URL url = new URL("http://192.168.1.11:4444/wd/hub");
+//			URL url = new URL("http://192.168.99.100:4444/wd/hub");
+			RemoteWebDriver driver = new RemoteWebDriver(url,dc); 
+			setDriver(driver);
+			getDriver().manage().deleteAllCookies();	
+			getDriver().manage().window().maximize();
 			return driver;			
 		}
 		
-		private static WebDriver getFirefoxDriver() throws InterruptedException, MalformedURLException {			
+		private WebDriver getFirefoxDriver() throws InterruptedException, MalformedURLException {			
 //			String filePath = ReusableData.currentDir+"\\Drivers\\chromedriver.exe";
 //			File file = new File(filePath);
 //			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());			    	
@@ -112,7 +121,8 @@ public class WebDriverFactory {
 			return driver;			
 		}
 		
-		private static WebDriver getphantomJSDriver() throws Exception {						
+		private WebDriver getphantomJSDriver() throws Exception {	
+			WebDriver driver =null;	
 			String phantomjs_dir = ReusableData.currentDir+"\\Drivers\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe";
 			File file = new File(phantomjs_dir);				
             System.setProperty("phantomjs.binary.path", file.getAbsolutePath()); 			
@@ -134,7 +144,8 @@ public class WebDriverFactory {
 		}
 		
 		
-		private static WebDriver getHeadlessChromeDriver() {			
+		private static WebDriver getHeadlessChromeDriver() {
+			WebDriver driver =null;	
 			String filePath = System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe";
 			System.setProperty("webdriver.chrome.driver", filePath);
 			ChromeOptions options = new ChromeOptions();
@@ -207,6 +218,27 @@ public class WebDriverFactory {
 			
 		}
 		
+		
+		
+		
+		public static WebDriverFactory getInstance()
+		{
+			if(instance==null) {
+				instance = new WebDriverFactory();
+			}
+			return instance;
+		}
+		
+		public void setDriver(WebDriver driver)
+		{
+			webDriver.set(driver);
+		}
+		
+		
+		public WebDriver getDriver()
+		{
+			return webDriver.get();
+		}
 		
 		
 }

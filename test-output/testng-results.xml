@@ -1,21 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="27709" started-at="2020-08-07T07:47:01Z" finished-at="2020-08-07T07:47:29Z">
+  <suite name="Suite" duration-ms="91623" started-at="2020-09-05T08:34:40Z" finished-at="2020-09-05T08:36:12Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="27709" started-at="2020-08-07T07:47:01Z" finished-at="2020-08-07T07:47:29Z">
+    <test name="test" duration-ms="91623" started-at="2020-09-05T08:34:40Z" finished-at="2020-09-05T08:36:12Z">
       <class name="com.testautomation.TestRunner.TestRunnerUI">
-        <test-method status="PASS" signature="beforeSetup()[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="beforeSetup" is-config="true" duration-ms="113" started-at="2020-08-07T13:17:01Z" finished-at="2020-08-07T13:17:01Z">
+        <test-method status="PASS" signature="beforeSetup()[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="beforeSetup" is-config="true" duration-ms="99" started-at="2020-09-05T14:04:40Z" finished-at="2020-09-05T14:04:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSetup -->
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="setUpClass" is-config="true" duration-ms="94" started-at="2020-08-07T13:17:01Z" finished-at="2020-08-07T13:17:01Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="setUpClass" is-config="true" duration-ms="78" started-at="2020-09-05T14:04:40Z" finished-at="2020-09-05T14:04:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="main_method" duration-ms="26260" started-at="2020-08-07T13:17:02Z" data-provider="testcasesList" finished-at="2020-08-07T13:17:28Z">
+        <test-method status="FAIL" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="main_method" duration-ms="88766" started-at="2020-09-05T14:04:41Z" data-provider="testcasesList" finished-at="2020-09-05T14:06:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC002_Education Edit]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[slave1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[XM]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.testautomation.WrapperComponent.WebDriverHelper.clickElement(WebDriverHelper.java:131)
+	at com.testautomation.PageObjects.OrangeHRMPage.EditSkills(OrangeHRMPage.java:16)
+	at com.testautomation.StepDef.OrangeHRMStepDef.edit_skills(OrangeHRMStepDef.java:10)
+	at ✽.Edit skills(Features/UI/BAU_Regression/OrangeHRM.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main_method -->
+        <test-method status="PASS" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="main_method" duration-ms="91070" started-at="2020-09-05T14:04:41Z" data-provider="testcasesList" finished-at="2020-09-05T14:06:12Z">
           <params>
             <param index="0">
               <value>
@@ -51,7 +97,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main_method -->
-        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="tearDownTest" is-config="true" duration-ms="831" started-at="2020-08-07T13:17:28Z" finished-at="2020-08-07T13:17:29Z">
+        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="tearDownTest" is-config="true" duration-ms="291" started-at="2020-09-05T14:06:10Z" finished-at="2020-09-05T14:06:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main_method status=FAILURE method=TestRunnerUI.main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownTest -->
+        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="tearDownTest" is-config="true" duration-ms="0" started-at="2020-09-05T14:06:12Z" finished-at="2020-09-05T14:06:12Z">
           <params>
             <param index="0">
               <value>
@@ -62,58 +119,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownTest -->
-        <test-method status="PASS" signature="main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="main_method" duration-ms="0" started-at="2020-08-07T13:17:29Z" data-provider="testcasesList" finished-at="2020-08-07T13:17:29Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TC002_Education Edit]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[N]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[slave1]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[XM]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- main_method -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="tearDownClass" is-config="true" duration-ms="3" started-at="2020-08-07T13:17:29Z" finished-at="2020-08-07T13:17:29Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="tearDownClass" is-config="true" duration-ms="4" started-at="2020-09-05T14:06:12Z" finished-at="2020-09-05T14:06:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-        <test-method status="PASS" signature="tearDownTest(org.testng.ITestResult)[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6]" name="tearDownTest" is-config="true" duration-ms="0" started-at="2020-08-07T13:17:29Z" finished-at="2020-08-07T13:17:29Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=main_method status=SUCCESS method=TestRunnerUI.main_method(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testautomation.TestRunner.TestRunnerUI@3b07a0d6] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownTest -->
       </class> <!-- com.testautomation.TestRunner.TestRunnerUI -->
-    </test> <!-- Test -->
+    </test> <!-- test -->
   </suite> <!-- Suite -->
 </testng-results>

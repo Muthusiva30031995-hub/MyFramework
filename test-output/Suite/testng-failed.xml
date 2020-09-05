@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="none">
-  <test name="Test(failed)" parallel="none">
+  <test name="test(failed)" parallel="methods">
     <classes>
       <class name="com.testautomation.TestRunner.TestRunnerUI">
         <methods>
@@ -9,9 +9,9 @@
           <include name="setUpClass"/>
           <include name="tearDownTest"/>
           <include name="tearDownClass"/>
-          <include name="main_method" invocation-numbers="0"/>
+          <include name="main_method" invocation-numbers="1"/>
         </methods>
       </class> <!-- com.testautomation.TestRunner.TestRunnerUI -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TestNG:  Test</title>
+<title>TestNG:  test</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
@@ -53,13 +53,13 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-<h2 align='center'>Test</h2><table border='1' align="center">
+<h2 align='center'>test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Aug 07 13:17:01 IST 2020</td>
+<td>Started on:</td><td>Sat Sep 05 14:04:40 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>27 seconds (27709 ms)</td>
+<tr><td>Total time:</td><td>91 seconds (91623 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,30 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.testautomation.TestRunner.TestRunnerUI.main_method()'><b>main_method</b><br>Test class: com.testautomation.TestRunner.TestRunnerUI<br>Parameters: TC002_Education Edit, 1, Y, Chrome, slave1, XM</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.testautomation.WrapperComponent.WebDriverHelper.clickElement(WebDriverHelper.java:131)
+	at com.testautomation.PageObjects.OrangeHRMPage.EditSkills(OrangeHRMPage.java:16)
+	at com.testautomation.StepDef.OrangeHRMStepDef.edit_skills(OrangeHRMStepDef.java:10)
+	at ?.Edit skills(Features/UI/BAU_Regression/OrangeHRM.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2067984306", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2067984306'><pre>java.lang.NullPointerException
+	at com.testautomation.WrapperComponent.WebDriverHelper.clickElement(WebDriverHelper.java:131)
+	at com.testautomation.PageObjects.OrangeHRMPage.EditSkills(OrangeHRMPage.java:16)
+	at com.testautomation.StepDef.OrangeHRMStepDef.edit_skills(OrangeHRMStepDef.java:10)
+	at ?.Edit skills(Features/UI/BAU_Regression/OrangeHRM.feature:8)
+</pre></div></td>
+<td>88</td>
+<td>com.testautomation.TestRunner.TestRunnerUI@3b07a0d6</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -77,12 +101,7 @@ function toggleAllBoxes() {
 <tr>
 <td title='com.testautomation.TestRunner.TestRunnerUI.main_method()'><b>main_method</b><br>Test class: com.testautomation.TestRunner.TestRunnerUI<br>Parameters: TC001_Skill Edit, 1, Y, Chrome, slave1, XM</td>
 <td></td>
-<td>26</td>
-<td>com.testautomation.TestRunner.TestRunnerUI@3b07a0d6</td></tr>
-<tr>
-<td title='com.testautomation.TestRunner.TestRunnerUI.main_method()'><b>main_method</b><br>Test class: com.testautomation.TestRunner.TestRunnerUI<br>Parameters: TC002_Education Edit, 1, N, Chrome, slave1, XM</td>
-<td></td>
-<td>0</td>
+<td>91</td>
 <td>com.testautomation.TestRunner.TestRunnerUI@3b07a0d6</td></tr>
 </table><p>
 </body>
